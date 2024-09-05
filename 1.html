@@ -4,7 +4,7 @@
     2. p: paragraph đoạn văn, tự xuống dòng
     3. img: hiển thị hình ảnh
     4. a: anchor - 1 thẻ đặt đc liên kết
-    5. ul, li: unordered list, list item - hiển thị danh sách
+    5. ul, li: unordered list <ul> (tự đánh bằng dấu tròn), list item - hiển thị danh sách
     6. table: kẻ bảng
     7. input: nhập dl  
     8. button: 
@@ -23,6 +23,48 @@
     20. <del> hoặc <s>: gạch 1 từ nào đó
     21. <ins>: dấu gạch dưới
     22. nav: thẻ điều hướng 
+    23. danh sách có thứ tự: <ol> - tự động đánh số thứ tự, nếu muốn đổi các số thứ tự thàn (I,i,A,a,...)  hay là số la mã thì dùng thuộc tính type. VD: type="I"
+                                <li>
+                             <ol>
+    24. definition lists: 
+    <dl>
+        <dt>  </dt>: title
+        <dd> <dd>: đoạn định nghĩa
+    <dl>
+    25. nested lists: list này chứa 1 list khác (list con) <ul>
+                                                                <li>  
+                                                            <ul> 
+    26. liên kết: nếu muốn từ thư mục này đến thư mục con thì dùng dấu /, lui về thư mục nào thì ../
+    Cú pháp:
+    <a href="url" target="value">...</a>
+    – Thẻ thuộc tính:
+    » href: chứa đường dẫn URL của trang web cần liên kết đến;
+        _mailto: địa chỉ mail
+    » target: có các giá trị chỉ định vùng cửa sổ sẽ hiển thị trang liên kết
+         _self (default): cửa sổ hiện hành;
+         _blank: mở cửa sổ mới;
+         _parent: mở ở frame chính (sử dụng với thẻ <iframe>);
+         _top: mở ở frame trên cùng (sử dụng với thẻ <iframe>)                                
+    27. border: Một hoặc nhiều giá trị của các thuộc tính định dạng.	
+        border: #ff0000 solid 2px;-Xác định tất cả các đường viền xung quanh.   
+    28. <table>: tạo ra bảng
+    <tr>: tạo ra 1 dòng trong table (table row)
+    <td>: tạo ra 1 ô (table data)
+    <th> tiêu đề bảng -> quy định tiêu đề cho dòng thì dùng scope='col'
+                        cho hàng thì scope='row' 
+    -> tự động in đậm
+    spanding column: kéo dài ô sang trái, phải (colspan='số') 
+    spanding row: kéo dài ô xuống dưới (rowspan='số')
+    <thead>: phần đầu
+    <tbody>: phần thân
+    <tfoot>: phần chân 
+    cellspacing: khoảng cách các ô
+    cellpadding: độ dãn các ô
+    29. <form action -> chỉ định đg dẫn>
+        form control -> <input type >
+        pthuc: get: form ngắn
+            post: chỉnh sửa,... nên dùng
+        nhãn cho form: label
      -->
 <html>
     <head> 
@@ -31,6 +73,10 @@
         <meta name="author" content="Thảo Vi">
     </head>
     <body>
+        <dl>
+            <dt>vi</dt>
+            <dd>là người dethuong</dd>
+        </dl>
         Hi, my name <del>thao</del> vi
         <div>
             <h1>Bài báo công bố quốc tế: Khởi sắc nhờ thưởng 'khủng' </h1>
@@ -46,6 +92,10 @@
             <li>hi</li>
             <li>hu</li>
         </ul>
+        <ol>
+            <li type="A">helo</li> 
+            <li>tui nè</li>
+        </ol>
         <table>
             <thead>
                 <th>stt</th> <!--tiêu đề của từng cột-->
