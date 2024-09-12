@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- các loại thẻ
+    1. h1-h6: heading tiêu đề
+    2. p: paragraph đoạn văn, tự xuống dòng
+    3. img: hiển thị hình ảnh
+    4. a: anchor - 1 thẻ đặt đc liên kết
+    5. ul, li: unordered list <ul> (tự đánh bằng dấu tròn), list item - hiển thị danh sách
+    6. table: kẻ bảng
+    7. input: nhập dl  
+    8. button: 
+    9. div: tạo 1 khối bao quanh các phần khác, chứa nhiều các tags khác
+    10. <hr>: gạch ngang, <br>: xuống dòng (line breaks)
+    11. <b>: in đậm, <i>: in nghiêng
+    12. &lt: tượng trưng cho dấu <, &gt: dấu >
+    13. superscript: dấu mũ <sup></sup>; subscript: mũ ở dưới <sub></sub>
+    14. <strong>: nhấn mạnh ndung và đồng thời in đậm
+    15. <em>: emphasis: nhấn mạnh nd và in nghiêng
+    -> nên dùng 14,15 thay vì thẻ <b>, <i>
+    16. <q>: mở ngoặc kép, có thể dùng "", <q> hiểu sâu hơn về ngữ cảnh như là đoạn trích, còn dấu "" mang tính kí tự
+    17. <blockquote>: nội dung lấy từ đâu
+    18. <abbr>; <acronym> diễn giải từ viết tắt
+    19. <cite> trích dẫn
+    20. <del> hoặc <s>: gạch 1 từ nào đó
+    21. <ins>: dấu gạch dưới
+    22. nav: thẻ điều hướng 
+    23. danh sách có thứ tự: <ol> - tự động đánh số thứ tự, nếu muốn đổi các số thứ tự thàn (I,i,A,a,...)  hay là số la mã thì dùng thuộc tính type. VD: type="I"
+                                <li>
+                             <ol>
+    24. definition lists: 
+    <dl>
+        <dt>  </dt>: title
+        <dd> <dd>: đoạn định nghĩa
+    <dl>
+    25. nested lists: list này chứa 1 list khác (list con) <ul>
+                                                                <li>  
+                                                            <ul> 
+    26. liên kết: nếu muốn từ thư mục này đến thư mục con thì dùng dấu /, lui về thư mục nào thì ../
+    Cú pháp:
+    <a href="url" target="value">...</a>
+    – Thẻ thuộc tính:
+    » href: chứa đường dẫn URL của trang web cần liên kết đến;
+        _mailto: địa chỉ mail
+    » target: có các giá trị chỉ định vùng cửa sổ sẽ hiển thị trang liên kết
+         _self (default): cửa sổ hiện hành;
+         _blank: mở cửa sổ mới;
+         _parent: mở ở frame chính (sử dụng với thẻ <iframe>);
+         _top: mở ở frame trên cùng (sử dụng với thẻ <iframe>)                                
+    27. border: Một hoặc nhiều giá trị của các thuộc tính định dạng.	
+        border: #ff0000 solid 2px;-Xác định tất cả các đường viền xung quanh.   
+    28. <table>: tạo ra bảng
+    <tr>: tạo ra 1 dòng trong table (table row)
+    <td>: tạo ra 1 ô (table data)
+    <th> tiêu đề bảng -> quy định tiêu đề cho dòng thì dùng scope='col'
+                        cho hàng thì scope='row' 
+    -> tự động in đậm
+    spanding column: kéo dài ô sang trái, phải (colspan='số') 
+    spanding row: kéo dài ô xuống dưới (rowspan='số')
+    <thead>: phần đầu
+    <tbody>: phần thân
+    <tfoot>: phần chân 
+    cellspacing: khoảng cách các ô giống border-spacing
+    cellpadding: độ dãn các ô
+    padding: khoảng cách giữa nd của ô và đg viền
+    border-collapse: để lại 1 đg viền duy nhất
+    boder-spacing: k/c ô
+    29. <form action -> chỉ định đg dẫn>
+        form control -> <input type >
+        pthuc: get: form ngắn
+            post: chỉnh sửa,... nên dùng
+        nhãn cho form: label là for cho 1 cái id nào đó, khi bấm vào chữ thì sẽ chọn k cần phải bấm vào ô
+    *thuộc tính: required là bắt buộc nhập, k đc để trống
+    placeholder: là hiển thị trong ô để nhận biết ô đó viết cái gì, sau khi viết thì sẽ mất 
+    * textarea: kéo đc cái khung, nhập được nhiều dòng phải có tên là thuộc tính name
+    max, min: giới hạn số
+    maxlength, minlength: giới hạn số chữ viết
+    name: submit cái form sẽ kèm theo 1 tập giá trị, phải đặt giống nhau trong trường chọn nhiều lựa chọn
+    size: độ rộng
+    checked: mặc định (nếu có nhiều checked thì lấy thằng cuối cùng), ít khi để cho loại checkbox
+    <select name='...': lựa chọn (có nhiều lựa chọn) (chọn 1)
+        <option value=''>
+        muốn chọn mặc định thì thêm selected vào option, có nhiều selected thì chọn thằng cuối cùng
+    chọn nhiều cái thì thêm thuộc tính multiple vào thẻ select
+    type='file': chọn file từ máy 
+    submit: gửi thông tin đi
+    reset: nhập lại
+    hidden: ẩn 
+    fiedset: bọc lại 1 cụm nào đó
+    tiêu đề của fiedset dùng legend
+     -->
+<html>
+    <head> 
+        <title>gek</title>
+        <meta charset="utf-8">  <!-- nhận tiếng việt-->
+        <meta name="author" content="Thảo Vi">
+    </head>
+    <body>
+        <dl>
+            <dt>vi</dt>
+            <dd>là người dethuong</dd>
+        </dl>
+        Hi, my name <del>thao</del> vi
+        <div>
+            <h1>Bài báo công bố quốc tế: Khởi sắc nhờ thưởng 'khủng' </h1>
+        <input type="text"><br><!--radio: đc chọn 1 cái
+                            text: nhập vb
+                            checkbox: chọn dấu tick, chọn nhiều cái -->
+        <button>Click here</button>
+        <p>TTO - Số lượng bài báo khoa học của nhiều trường đại học nước ta công bố trên tạp chí quốc tế uy tín tăng lên trong thời gian qua phần lớn là nhờ chính sách thưởng từ các trường.</p>
+        <img src="https://cdn.tuoitre.vn/thumb_w/1200/2019/12/30/nghiencuukhoahoc-sv-sgu36-3read-only-1577713101885209928085.jpg" alt="Ảnh con người">
+        <a href="https://fullstack.edu.vn/landing/htmlcss/">tới trang học lt</a>
+        <ul>
+            <li>helo</li>
+            <li>hi</li>
+            <li>hu</li>
+        </ul>
+        <ol>
+            <li type="A">helo</li> 
+            <li>tui nè</li>
+        </ol>
+        <table>
+            <thead>
+                <th>stt</th> <!--tiêu đề của từng cột-->
+                <th>tên </th>
+                <th>địa chỉ</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>thảo vi</td>
+                    <td>đà nẵng</td>
+                </tr> <!--dòng của bảng-->              
+            </tbody>
+        </table>
+        </div>
+    </body>
+    
+</html>

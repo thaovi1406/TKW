@@ -1,22 +1,71 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Đây là trang web có cấu trúc hướng ngữ </title>
-    </head>
     <body>
-        <header>
-            <nav>
-                <a href="cslt.html">Cơ sở lập trình</a> |
-                <a href="tkw.html">Thiết kế web</a> |
-                <a href="ltw.html">Lập trình web</a>
-            </nav>
-        </header>
-        <main>
-            <h2>Chào mừng đến với khóa học THIẾT KẾ WEB</h2>
-            <p>Trang bị cho sinh  kiến thức và kỹ năng cần thiết để có thể xây dựng được ứng dụng  ở mức cơ bản phía trình duyệt rên máy người ,...</p>
-        </main>
-        <footer>
-            <p>Copyright by @Tui</p>
-        </footer>
+        <table border>
+            <form action="1.html" method="post">
+            <tr>
+                <td colspan="2" style="background-color: yellow; color: black;"><b>Registration Form</b></td>
+            </tr>
+            <tr>
+                <td>Enter name</td>
+                <td><input type="text" name="Enter name"> <br></td>
+            </tr>
+            <tr>
+                <td>Enter password</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>Enter address </td>
+                <td><textarea name="name address"></textarea></td>
+            </tr>
+            <tr>
+                <td>Select Game </td>
+                <td><input type="checkbox" id="hockey" name="Game">
+                    <label for="Hockey">Hockey</label> <br>
+                    <input type="checkbox" id="football" name="Game">
+                    <label for="Football">Football</label> <br>
+                    <input type="checkbox" id="Badminton" name="Game">
+                    <label for="Badminton">Badminton</label> <br>
+                    <input type="checkbox" id="Basketball" name="Game">
+                    <label for="Basketball">Basketball</label>
+                </td>
+                <tr>
+                    <td>Gender</td>
+                    <td><input type="radio" id="Male" name="Gender">
+                        <label for="Male">Male</label>
+                        <input type="radio" id="Female" name="Gender">
+                        <label for="Female">Female</label> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>
+                        <select name="Age">
+                            <option value="18">18</option>
+                            <option value="18">19</option>
+                            <option value="18">20</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Avatar</td>
+                    <td><input type="file"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Click me">
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Submit">
+                    </td>
+                </tr> 
+            </tr>
+            </form>
+        </table>
     </body>
 </html>
+
+
+
+
+
+
