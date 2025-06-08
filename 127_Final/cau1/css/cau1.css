@@ -1,0 +1,46 @@
+.cum {
+    display: flex;
+    background-color: cornsilk;
+    font-family: sans-serif;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 10px;
+}
+.cum1 {
+    flex: 1;
+}
+form {
+    background-color: white;
+}
+.cum2 {
+    margin: 20px;
+    padding: 10px;
+    width: 100%;
+    flex: 3;
+    border-radius: 10px;
+
+}
+h2 {
+    text-align: center;
+    color: green;
+}
+.a, .b, .c, .d, .e, .f, .g {
+    margin-bottom: 10px;
+}
+input[type=text], input[type=tel], input[type=email], input[type=date], textarea, select {
+    width: 100%;
+}
+button[type=submit] {
+    background-color: green;
+    color: white;
+    border-radius: 6px;
+    padding: 7px;
+}
+button[type=reset] {
+    background-color: red;
+    color: white;
+    border-radius: 6px;
+    padding: 7px;
+}

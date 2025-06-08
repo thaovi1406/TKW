@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .nav 
+        {
+            background-color: rgba(0, 0, 139, 0.258);
+            padding: 10px;
+            width: 100%;
+            display: flex; /* Thay đổi display để sử dụng flex */
+            justify-content: space-between; /* Giúp các phần tử căn đều */
+            flex-wrap: wrap; /* Cho phép xếp chồng khi không đủ không gian */
+        }
+        .menu {
+            display: flex; /* Sử dụng flex cho menu */
+            flex-wrap: wrap; /* Cho phép các mục menu xếp chồng */
+            justify-content: flex-start; /* Căn chỉnh sang bên trái */
+            width: 100%; /* Đảm bảo menu chiếm toàn bộ chiều rộng */
+        }
+        a
+        {
+            text-decoration: none;
+            color: black;
+            margin: 0 20px; /* Khoảng cách giữa các liên kết */
+            padding: 5px; /* Thêm padding cho liên kết */
+        }
+        .timkiem
+        {
+            margin: 10px;
+            display: flex;
+            flex-direction: row;
+        }
+        .anh 
+        {
+            display: flex;
+            justify-content: space-around; /* Căn giữa các hình ảnh */
+            margin-top: 20px;
+        }
+        img
+        {
+            width: 300px;
+            height: 200px;
+            padding-top: 10px ;
+            max-width: 100%;
+        }
+        .anh1
+        {
+            justify-content: space-between;
+            padding: 10px;
+        }  
+        input[type=text]
+        {
+            width: 300px;
+            padding: 10px 20px 10px 40px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            font-size: 16px;
+        }
+        input[type=submit]
+        {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #053b70;
+            color: white;
+            font-size: 16px; 
+            margin-left: -40px;
+        }
+        i {
+            position: absolute;
+            margin: 10px;
+            font-size: 18px;
+            color: grey;
+        }
+        @media (max-width:968px)
+        {
+            input[type="text"] {
+                width: 80%; /* Chỉnh thanh tìm kiếm phù hợp với màn hình nhỏ hơn */
+            }
+            .anh
+            {
+                max-width: 100%;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Culinary Blog</a>
+            <a href="#">Menu</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </nav>
+    <form>
+        <div class="timkiem">  
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i> 
+                <input type="text" placeholder="Enter text here">
+            </div>
+            <input type="submit" value="Search">
+        </div>
+    </form>
+    
+    <div class="anh">
+        <div class="anh1">
+            <img src="../image/banhtrang.jpg" alt="">
+            <img src="../image/banhxeo.jpg" alt="">
+        </div>
+        <div class="anh1">
+            <img src="../image/canhca.jpg" alt="">
+            <img src="../image/thitkho.jpg" alt="">
+        </div>
+        <div class="anh1">
+            <img src="../image/thit.jpg" alt="">
+            <img src="../image/canhca.jpg" alt="">
+        </div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Thêm hiệu ứng mượt khi thay đổi màu nền */
+}
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #f1f1f1;
+    transition: background-color 0.2s ease;
+}
+button:hover {
+    background-color: #ddd; /* Thêm hiệu ứng hover cho nút */
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .grid
+        {
+            display: grid;
+            gap: 10px;
+        }
+        .header
+        {
+            background-color: rgba(255, 127, 80, 0.766);
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .content
+        {
+            background-color: rgba(0, 255, 255, 0.668);
+            height: 400px;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .sidebar
+        {
+            padding: 8px;
+            background-color: yellow;
+            font-weight: bold;
+        }
+        .footer
+        {
+            background-color: rgba(0, 195, 255, 0.537);
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        @media (max-width:640px)
+        {
+            .grid
+            {
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                    'header'
+                    'content'
+                    'footer';
+            }
+            .sidebar
+            {
+                background-color: yellow;
+            }
+            .header
+            {
+                grid-area: header;
+            }
+            .content
+            {
+                grid-area: content;
+            }
+            .footer
+            {
+                grid-area: footer;
+            }
+            .sidebar
+            {
+                display: none;
+            }
+        }
+        @media (min-width:768px)
+        {
+            .grid
+            {
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                    'header'
+                    'content'
+                    'sidebar'
+                    'footer';
+            }
+            .sidebar
+            {
+                background-color: yellow;
+            }   
+        }
+        @media (min-width:1024px)
+        {
+            .grid
+            {
+                grid-template-columns: 2fr 5fr;
+                grid-template-areas: 
+                    'header header'
+                    'sidebar content'
+                    'footer footer';
+            }
+            .sidebar
+            {
+                background-color: rgba(255, 255, 0, 0.548);
+            }
+            .header
+            {
+                grid-area: header;
+            }
+            .sidebar
+            {
+                grid-area: sidebar;
+            }
+            .footer
+            {
+                grid-area: footer;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="item header">Header</div>
+        <div class="item content">Content</div>
+        <div class="item sidebar">Sidebar</div>
+        <div class="item footer">Footer</div>
+    </div>
+</body>
+</html>

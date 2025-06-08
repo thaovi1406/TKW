@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .anh1 {
+            width: 60%;
+            min-height: 70px;
+        }
+
+        .main1,
+        .main2 {
+            display: flex;
+            margin: 10px;
+        }
+        .doan {
+            margin: 40px;
+        }
+
+        .main2 {
+            display: flex;
+            align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+            gap: 10px; /* Tạo khoảng cách giữa các phần tử */
+        }
+
+        .main2 > p {
+            margin: 0; /* Xóa khoảng cách thừa */
+            padding: 7px;
+            text-align: center; /* Căn giữa nội dung */
+            border: 1px solid black;
+            border-radius: 6px;
+            min-width: 20px; /* Đảm bảo kích thước cố định */
+        }
+
+        .cart {
+            display: flex;
+            align-items: center; /* Căn biểu tượng và chữ theo chiều dọc */
+            justify-content: center; /* Căn giữa nội dung */
+            gap: 10px; /* Khoảng cách giữa biểu tượng và chữ */
+            border: 1px solid black;
+            padding: 8px; /* Kích thước nút phù hợp */
+            border-radius: 6px;
+            margin-bottom: 0px;
+        }
+
+        .cart:hover {
+            background-color: gray;
+        }
+        img {
+            width: 100%;
+        }
+
+        .main3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 30px;
+            margin-left: 10px;
+        }
+        .cum>h2 {
+            margin-left: 10px;
+            padding-top: 10px;
+        }
+        .cum {
+            background-color: ghostwhite;
+            margin-top: 40px;
+        }
+        .one,
+        .two,
+        .three,
+        .four {
+            border: 1px solid black;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .star {
+            color: gold;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            font-size: small;
+        }
+        button
+        {
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding: 7px;
+            margin-bottom: 10px;
+        }
+        .nut {
+            margin-top: auto;        
+        }
+        
+        @media (max-width:768px) {
+            .main3 {
+                grid-template-columns: repeat(auto-fit, minmax(150px,1fr))
+            }
+            .main1 {
+                flex-direction: column;   
+            }
+
+            .anh1 {
+                width: 100%;
+            }
+
+            .doan {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main1">
+        <img src="../image/anh.png" alt="" class="anh1">
+        <div class="doan">
+            <span>SKU: BST-498</span>
+            <h1>Shop item template</h1>
+            <span><del>$48.00</del> $40.00</span>
+            <p>
+                Lorem ipsum dolor sit amet consecteur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?
+            </p>
+            <div class="main2">
+                <p>1</p>
+                <button class="cart" onclick="show()">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Add to cart
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class=cum>
+        <h2>Related products</h2>
+        <div class="main3">
+                <div class="one">
+                    <img src="../image/anh.png" alt="">
+                    <p>Fancy Product</p>
+                    <p>$40.00 - $80.00</p>
+                    <div class="nut">
+                        <button type="button">View options</button>
+                    </div>
+                </div>
+                <div class="two">
+                    <img src="../image/anh.png" alt="">
+                    <p>Special Item</p>
+                    <div class="star">                    
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p><del>$20.00</del> $80.00</p>
+                    <div class="nut">
+                        <button type="button">View options</button>
+                    </div>
+                </div>
+                <div class="three">
+                    <img src="../image/anh.png" alt="">
+                    <p>Fancy Product</p>
+                    <p><del>$50.00</del> $20.00</p>
+                    <div class="nut">
+                        <button type="button">View options</button>
+                    </div>
+                </div>
+                <div class="four">
+                    <img src="../image/anh.png" alt="">
+                    <p>Popular Item</p>
+                    <div class="star">                    
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>$40.00</p>
+                    <div class="nut">
+                        <button type="button" onclick="show()">View options</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script>
+        function show() {
+            document.getElementsByTagName("button")[4].style.backgroundColor="red";
+            window.onload = function ()
+            {
+                alert('Xin chào') 
+            }
+        }
+    </script>
+</body>
+
+</html>

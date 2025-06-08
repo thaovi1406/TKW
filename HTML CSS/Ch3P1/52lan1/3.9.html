@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        div 
+        {
+            background-color: rgb(240, 255, 255);
+            width: 400px;
+            margin: 10px auto;
+            text-align: center;
+        }
+        .fa 
+        {
+            margin-top: 8px;
+            border: 2px solid;
+            color: orange;
+            border-radius: 100%;
+        }
+        input 
+        {
+            margin: 5px;
+        }
+        input[type=email]
+        {
+            width: 180px;
+        }
+        input[type=submit]
+        {
+            border: 0.5px white;
+            padding: 10px;
+            background-color: rgb(238, 145, 24);
+            color: white;
+            margin-bottom: 10px;
+        }
+        @media (max-width:768px)
+        {
+            div 
+            {
+                width: 100%;
+                background-color: rgba(128, 128, 128, 0.314);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <i class="fa fa-envelope"></i>
+        <h2>Đăng ký nhận bản tin</h2>
+        <p>Vui lòng điền chính xác email của anh/chị vào mục sau.</p>
+            <input type="email" name="email" placeholder="Nhập địa chỉ email"> <br>
+            <input type="submit" value="Gửi thông tin">
+    </div>
+</body>
+</html>

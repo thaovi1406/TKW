@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh sách bài tập</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar bg-light p-3 border-end" style="width: 250px;">
+      <div class="d-flex align-items-center gap-2 border-bottom pb-3">
+        <i data-lucide="user" class="text-dark" style="width: 24px; height: 24px;"></i>
+        <span>Hi, Lam</span>
+      </div>
+
+      <nav class="mt-3">
+        <ul class="list-unstyled">
+          <li class="sidebar-item">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
+              <i data-lucide="book-open"></i>
+              <span>Khóa học</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
+              <i data-lucide="layers"></i>
+              <span>Lớp học</span>
+            </a>
+          </li>
+          <li class="sidebar-item active">
+            <a href="{% url 'ql_baitap' %}" class="d-flex align-items-center gap-2 text-decoration-none text-primary">
+              <i data-lucide="file-text"></i>
+              <span>Bài tập</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
+              <i data-lucide="credit-card"></i>
+              <span>Thanh toán</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
+              <i data-lucide="file-spreadsheet"></i>
+              <span>Tài liệu</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
+              <i data-lucide="check-square"></i>
+              <span>Bài kiểm tra</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="d-flex align-items-center gap-2 text-decoration-none text-dark">
+              <i data-lucide="users"></i>
+              <span>Người dùng</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content flex-grow-1 p-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    lucide.createIcons(); // Kích hoạt Lucide Icons
+  </script>
+</body>
+</html>

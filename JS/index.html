@@ -1,0 +1,106 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">dm</p>
+    <p class="helo">12</p>
+    <script src="./lythuyethtml_dom.js"></script>
+    <div id="a" onclick="document.getElementById('helo').innerHTML='khỏe'">XIN CHÀO</div>
+</body>
+</html>-->
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Đổi giờ</div>
+    <div>Dòng 1</div>
+    <div class="dong2">Dòng 2</div>
+    <button type="button" onclick="document.getElementsByTagName('div')[0].innerHTML= Date()">
+        Click here
+    </button>
+    <button type="button" onclick="document.getElementsByTagName('div')[1].innerHTML='Hé lô'">
+        Bấm dô đây
+    </button>
+
+    <button type="button" onclick="document.getElementsByClassName('dong2')[0].innerHTML='Đổi dòng 3'">
+        Bấm vô đây
+    </button>
+</body>
+</html>-->
+
+<!--!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button type="button" onclick="document.getElementsByTagName('img')[0].src='./image/images.png'">
+        On
+    </button>
+    <img src=".//image/off.png" alt="" style="width: 100px; height: 60px;">
+    <button type="button" onclick="document.getElementsByTagName('img')[0].src='./image/off.png'">
+        Off
+    </button>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+  fucntion show($size) {
+    document.getElementsByTagName('h2')[0].style.fontSize=$size
+  }
+<h2 class="box" onmouseover="show('right')" onmouseout="show(left)">
+    Nội dung văn bản
+  </h2>
+  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function changeFontSize(increment) {
+            const chu = document.getElementsByTagName("h2")[0];
+            // Lấy kích thước hiện tại và chuyển đổi sang số
+            let currentSize = window.getComputedStyle(chu).fontSize;
+            let newSize = parseFloat(currentSize) + increment;
+            // Cập nhật kích thước mới
+            chu.style.fontSize = newSize + "px";
+        }
+    </script>
+</head>
+<body>
+    <button onclick="changeFontSize(2);">Tăng</button>
+    <button onclick="changeFontSize(-2);">Giảm</button>
+    <h2>
+        Chương trình: hỗ trợ nghiên cứu sinh sau tiến sĩ ngắn hạn, từ 1 đến 2 tháng tại Áo.
+        Mức hỗ trợ: 1.250 Euro/tháng
+        Hạn nộp hồ sơ ứng tuyển: Nộp trước từ 02-09 tháng so với thời gian lưu trú để nghiên cứu theo kế hoạch
+        Yêu cầu:  
+        Không quá 45 tuổi
+        Đang làm nghiên cứu sau tiến sĩ
+        Không có bất cứ hoạt động học thuật hay nghiên cứu nào tại Áo trong vòng 6 tháng trước khi nhận học bổng này
+        Người nộp đơn thường trú tại Áo hoặc đã hoàn thành chương trình giáo dục học thuật chủ yếu tại Áo không đủ điều kiện để nộp đơn
+    </h2>
+    
+</body>
+</html>

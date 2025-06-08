@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .grid
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas: 
+                    'muc1 muc1'
+                    'muc2 muc3'
+                    'muc4 muc5';
+            grid-gap: 15px;
+        }
+        .muc
+        {
+            background-color: pink;
+            text-align: center;
+            align-content: center;
+            font-size: 16pt;
+            padding: 20px;
+        }
+        .muc1
+        {
+            grid-area: muc1;
+        }
+        .muc2
+        {
+            grid-area: muc2;
+        }
+        .muc3
+        {
+            grid-area: muc3;
+        }
+        .muc4
+        {
+            grid-area: muc4;
+        }
+        .muc5
+        {
+            grid-area: muc5;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="muc muc1">Mục 1</div>
+        <div class="muc muc2">Mục 2</div>
+        <div class="muc muc3">Mục 3</div>
+        <div class="muc muc4">Mục 4</div>
+        <div class="muc muc5">Mục 5</div>
+    </div>
+</body>
+</html>

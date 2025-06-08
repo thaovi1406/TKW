@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .grid
+        {
+            display: grid;
+            background-color: coral;
+            gap: 10px;
+            padding: 10px;
+        }
+        .item
+        {
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 20px;
+            font-size: 16pt;
+            font-weight: bold;
+        }
+        @media (max-width:640px)
+        {
+            .grid
+            {
+                grid-template-columns: 1ft;
+            }
+        }
+        @media (min-width:768px)
+        {
+            .grid
+            {
+                grid-template-columns: 1ft 1ft;
+                grid-template-areas: 
+                        'header header'
+                        'menu menu'
+                        'main right'
+                        'footer footer';
+            }
+            .header 
+            {
+                grid-area: header;
+            }
+            .menu
+            {
+                grid-area: menu;
+            }
+            .footer
+            {
+                grid-area: footer;
+            }
+        }
+        @media (min-width:1024px)
+        {
+            .grid
+            {
+                grid-template-columns: 1ft 1ft 1ft;
+                grid-template-areas: 
+                        'header header header'
+                        'menu main right'
+                        'menu footer footer';
+            }
+            .header 
+            {
+                grid-area: header;
+            }
+            .menu
+            {
+                grid-area: menu;
+            }
+            .footer
+            {
+                grid-area: footer;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="item header">Header</div>
+        <div class="item menu">Menu</div>
+        <div class="item main">Main</div>
+        <div class="item right">Right</div>
+        <div class="item footer">Footer</div>
+    </div>
+</body>
+</html>

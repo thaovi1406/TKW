@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container
+        {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            grid-template-rows: auto auto auto auto auto;
+            gap: 15px;
+            grid-template-areas: 
+                'item1 item2 item3 item4 item6 item7'
+                'item8 item9 item5 item5 item5 item5'
+                'item10 item11 item5 item5 item5 item5'
+                'item12 item13 item5 item5 item5 item5'
+                'item14 item15 item5 item5 item5 item5';
+        }
+        .grid-item {
+            background-color: #008cff;
+            border: 1px solid;
+            padding: 10px;
+            font-size: 20px;
+            text-align: center;
+        }     
+        .item5
+        {
+            grid-area: item5;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+        <div class="grid-item item10">10</div>
+        <div class="grid-item item11">11</div>
+        <div class="grid-item item12">12</div>
+        <div class="grid-item item13">13</div>
+        <div class="grid-item item14">14</div>
+        <div class="grid-item item15">15</div>
+
+    </div>
+</body>
+</html>

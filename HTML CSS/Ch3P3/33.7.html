@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }        
+        .grid
+        {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 100px 1fr 1fr;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        .cum1
+        {
+            display: flex;
+            text-decoration: none;
+            background-color: rgba(42, 42, 54, 0.784);
+            color: white;
+            flex-wrap: wrap;
+            padding: 0 10px;
+        }
+        .chu
+        {
+            align-content: center;
+            margin-left: 50px;
+        }
+        ul
+        {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end; /* Đẩy các mục sang bên phải */
+            flex-wrap: wrap;
+            min-height: auto;
+        }
+        li
+        {
+            justify-content: space-between;
+            margin: 10px;
+            align-content: center;
+            white-space: nowrap; 
+        }
+        .cum2
+        {
+            display: flex;
+            background-color: rgba(42, 42, 54, 0.784);
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            flex-wrap: wrap; /* Cho phép phần tử con co giãn */
+            padding: 20px; /* Thêm padding để tránh tràn viền */
+        }
+        img
+        {
+            width: 100%;
+            height: auto;
+            margin-right: 40px;
+            margin-bottom: 40px;
+        }
+        .chu1
+        {
+            margin-left: 50px;
+            padding-right: 20px;
+            font-size: 16pt;
+        }
+        button
+        {
+            border-radius: 5px;
+            padding: 8px;
+            margin-bottom: 50px;
+        }
+        .b1
+        {
+            background-color: rgba(0, 81, 255, 0.84);
+            color: white;
+        }
+        .b1:hover, .b2:hover {
+            opacity: 0.5;
+        }
+        .cum3
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            grid-template-areas: 
+                    'one two three'
+                    'one four five';
+            margin-top: 40px;
+            margin-left: 20px;
+            box-sizing: border-box;
+        }
+        .one
+        {
+            grid-area: one;
+        }
+        i
+        {
+            background-color: rgba(0, 68, 255, 0.914);
+            color: white;
+            padding: 10px;
+            border-radius: 7px;
+        }
+        @media (max-width: 768px) {
+                .cum1 {
+                    flex-direction: column;
+                    text-align: center;
+                    max-width: 100vw;
+                }
+            
+                ul {
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    box-sizing: border-box;
+                }
+                li {
+
+                    margin:5px; /* Điều chỉnh lại khoảng cách giữa các mục khi thu nhỏ */
+                    
+                }
+                img 
+                {
+                    min-width: 100%; 
+                    height: auto;
+                }
+                .cum2 {
+                    flex-direction: column;
+                    text-align: center;
+                    padding: 10px;
+                    width: 100%;
+                }
+            
+                .cum3 {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                }
+            }
+        
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="cum1">
+            <div class="chu">Start Bootstrap</div>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+                <li>Pricing</li>
+                <li>FAQ</li>
+                <li>Blog</li>
+                <li>Portfolio</li>
+            </ul>
+        </div>
+        <div>
+            <div class="cum2">
+                <div class="chu1">           
+                <h1 style="color: white;">A Bootstrap 5 template for modern businesses</h1>
+                <h3 style="color: rgba(171, 161, 161, 0.918);">Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit!</h3>
+                <button class="b1">Get Started</button>
+                <button class="b2">Learn More</button>
+                </div>
+                <img src="../image/anh.png" alt="">
+            </div>
+        </div>
+        <div class="cum3">
+            <div class="one">
+                <h2>A better way to start building.</h2>
+            </div>
+                <div class="two">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3>Featured title</h3>
+                    <p>Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                </div>
+                <div class="three">
+                    <i class="fa-solid fa-building"></i>
+                    <h3>Featured title</h3>
+                    <p>Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                </div>
+                <div class="four">
+                    <i class="fa-solid fa-toggle-on"></i>
+                    <h3>Featured title</h3>
+                    <p>Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                </div>
+                <div class="five">
+                    <i class="fa-solid fa-toggle-on"></i>
+                    <h3>Featured title</h3>
+                    <p>Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                </div>
+        </div>
+
+    </div>
+</body>
+</html>

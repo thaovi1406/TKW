@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32-8</title>
+    <style>
+        .a
+        {
+            display: flex;
+            height: 50px;
+            width: 100%;
+            background-color:rgb(11, 11, 104);
+            align-content: center;
+            flex-direction: column;
+        }
+        .e
+        {
+            display: flex;
+            height: 50px;
+            width: 100%;
+            background-color: rgb(255, 0, 0);
+            align-content: center;
+            flex-direction: column;
+        }
+        .e1
+        {
+            color:black;
+            text-align: center;
+            padding-top: 15px;
+        }
+        .a1
+        {
+            padding-top: 5px;
+            color: white;
+            text-align: center;
+        }
+        .a2
+        {
+            color: white;
+            text-align: center;
+            font-size: smaller;
+        }
+        .b
+        {
+            display: flex;
+            height: 70px;
+            width: 100%;
+            background-color: black;
+            align-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .b1
+        {
+            padding-left: 20px;
+            color: white;
+            margin-right: 35px;
+        }
+        .c
+        {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .c1
+        {
+            order: 1;
+            padding-top: 10px;
+            height: auto;
+            width: 40%;
+            flex-direction: column;
+            display: flex;
+            border: 1px solid darkgray;
+            background-color: darkgray;
+        }
+        .c2
+        {
+            font-size: 20px;
+            padding-left: 10px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .img
+        {
+            width: 100%;
+            overflow: hidden;
+        }
+        .img1
+        {
+            padding-top: 5px;
+            margin-left: 5px;
+            margin-right: 10px;
+            width: calc(100% - 15px); 
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .c3
+        {
+            padding-left: 10px;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        .img2
+        {
+            margin-top: 5px;
+            padding-top: 5px;
+            margin-left: 5px;
+            margin-right: 10px;
+            width: calc(100% - 15px); 
+            height: 45px;
+            object-fit: cover;
+        }
+        .d {
+            flex-shrink: 1;
+            order: 2;
+            flex-grow: 1;
+            height: auto;
+            display: flex;
+            border:none;
+            flex-direction: column; /* Sắp xếp theo cột */
+            padding: 10px; /* Thêm padding để tạo không gian bên trong */
+            overflow: auto;
+        }
+        .img4
+        {
+            padding-left: 10px;
+            width: 80%;
+            object-fit: cover;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <div class="a1">Công Ty Du Lịch Suối Tiên</div>
+        <div class="a2">Mang đến cho bạn sự thư giãn</div>
+    </div>
+    <div class="b">
+        <span class="b1">Giới thiệu</span>
+        <span class="b1">Chương Trình</span>
+        <span class="b1">Hình ảnh</span>
+        <span class="b1">Liên hệ</span>
+    </div>
+    <div class="c">
+        <div class="c1">
+            <div class="c2">Giới thiệu con người về du lịch đà nẵng</div>
+            <div class="c3"><strong>Thành phố đáng sống nhất Việt Nam</strong></div>
+            <div class="img"><img class="img1"src="./../Ảnh/QNH.jpg"></div>
+            <div class="c3">Tọa lạc tại vùng Nam Trung Bộ, Đà Nẵng hội tụ đủ cả núi, đồng bằng, biển và là nơi đã lọt vào top một trong 20 thành phố sạch đẹp nhất trên thế giới. Nhờ địa hình đa dạng và khung cảnh thiên nhiên tuyệt đẹp nên Đà Nẵng đã không ngừng thu hút du khách trong nước và ngoài nước hàng năm đặt tour du lịch Đà Nẵng đến khám phá tận hưởng kỳ nghỉ tuyệt vời nhất.</div>
+            <div class="c2">Các hình ảnh nổi bật</div>
+            <div class="img">
+                <img class="img2" src="./../Ảnh/responsive.jpg"><br>
+                <img class="img2" src="./../Ảnh/responsive.jpg"><br>
+                <img class="img2" src="./../Ảnh/responsive.jpg"><br>
+                <img class="img2" src="./../Ảnh/responsive.jpg"><br>
+            </div>
+        </div>
+        <div class="d">
+            <div class="c2">Công Viên Châu Á</div>
+            <div class="c3"><b>Đà Nẵng 10/4/2023</b></div><br>
+            <div><img class="img4"src="./../Ảnh/responsive.jpg"></div><br>
+            <div class="c3">Vị trí: : Đ. 2 Tháng 9, Hoà Cường Bắc, Hải Châu, Đà Nẵng<br> là một trong những điểm đến không thể bỏ 
+                Không chỉ nổi tiếng với nhiều trò chơi hiện đại, Công viên Châu Á Đà Nẵng còn là nơi thư giãn, nghỉ ngơi với những không gian xanh mướt. </div><br><br>
+            <div class="c2">Hải Đăng Tiên Sa</div>
+            <div><img class="img4"src="./../Ảnh/responsive.jpg"></div>
+            <div class="c3">Vị trí: Thọ Quang, Sơn Trà, Đà Nẵng <br>Hải đăng Tiên Sa cao 15.6m, rộng trung bình 2.7m. Cùng với tầm nhìn địa lý 14 hải lý, chiều cao của tâm đèn là 238.4 mét. Từ đây, bạn có thể phóng tầm mắt ra xa, nhìn trọn cả vùng biển bao la, bao quát bán đảo Sơn Trà rộng lớn, nhìn ra thành phố Đà Nẵng xinh đẹp.</div>
+        </div>
+    </div>
+    <div class="e">
+        <div class="e1">
+            Copyright by@2024
+        </div>
+    </div>
+</body>
+</html>

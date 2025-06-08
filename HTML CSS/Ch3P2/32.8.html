@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .banner
+        {
+            background-color: rgba(0, 115, 255, 0.84);
+            text-align: center;
+            padding: 5px;
+            color: white;
+            height: 150px;
+            align-content: center;
+        }
+        .navbar
+        {
+            background-color: rgba(34, 4, 4, 0.601);
+            color: white;
+            min-height: 40px;
+        }
+        .list
+        {
+            list-style: none;
+            display: flex;
+            margin-top: 0px;
+            flex-wrap: wrap;
+        }
+        .list>li
+        {
+            margin: 10px;
+        }
+        .main
+        {
+            display: flex;
+        }
+        .cum1
+        {
+            background-color: rgba(128, 128, 128, 0.204);
+            padding: 10px;
+            flex: 1;
+        }
+        .anh1
+        {
+            max-width: 100%;
+            height: 150px;
+            padding: 10px;
+            background-color: gray;
+        }
+        .anh2
+        {
+            max-width: 500px;
+            height: 40px;
+            margin: 10px;
+            padding: 10px;
+            background-color: gray;
+        }
+        .cum2
+        {
+            margin: 10px;
+            padding-left: 10px;
+            flex: 2;
+        }
+        footer
+        {
+            background-color: rgba(255, 166, 0, 0.593);
+            text-align: center;
+            align-content: center;
+            width: 100%;
+            height: 70px;
+        }
+        @media (max-width: 768px) {
+            .list {
+                flex-direction: column; /* Xếp các mục theo chiều dọc khi màn hình nhỏ */
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h2>Công ty Du lịch Suối Tiên</h2>
+        <p>Mang bạn đến với chốn tiên cảnh</p>
+    </div>
+
+    <div class="navbar">
+        <ul class="list">
+                <li>Giới thiệu</li>
+                <li>Chương trình</li>
+                <li>Hình ảnh</li>
+                <li>Liên hệ</li>
+            </ul>
+    </div>
+    <div class="main">
+        <div class="cum1">
+            <h2>Giới thiệu về du lịch Đà Nẵng</h2>
+            <p>Thành phố đáng sống nhất Việt Nam</p>
+            <div class="anh1">image</div>
+            <p>Đà Nẵng được xem là thành phố xinh đẹp mà bất kì ai cũng phải đến trong đời. Để trả lời cho những câu hỏi trải nghiệm Đà Nẵng đi đâu? Gía vé du lịch tại Đà Nẵng là bao nhiêu? Dưới đây là một số cẩm nang du lịch Đà Nẵng với các địa điểm HOT nhất.</p>
+            <h3>Các hình ảnh nổi bật</h3>
+            <div class="anh2">image</div>
+            <div class="anh2">image</div>
+            <div class="anh2">image</div>
+            <div class="anh2">image</div>
+        </div>
+        <div class="cum2">
+            <h2>CÔNG VIÊN CHÂU Á</h2>
+            <p>Đà Nẵng, ngày 15/08/2023</p>
+            <div class="anh1">image</div>
+            <p>Vị trí: Số 1 đường Phan Đăng Lưu, Hòa Cường Bắc, Hải Châu.</p>
+            <p>Công viên châu Á - Asia Park sở hữu hàng trăm trò chơi giải trí mạo hiểm đa dạng. Địa điểm du lịch tự túc ở Đà Nẵng nổi tiếng thu hút lượng lớn du khách tham quan hằng năm. Tại đây có rất nhiều trò chơi mạo hiểm như: tàu lượn siêu tốc, tháp rơi tự do... Hoặc trò chơi dành cho các em nhỏ quay mặt trời Sun Wheel là nơi chắc chắn bạn phải đi thử, nhất là với các cặp đôi.</p>
+            <h2>HẢI ĐĂNG TIÊN SA</h2>
+            <p>Đà Nẵng, ngày 10/08/2023</p>
+            <div class="anh1">image</div>
+            <p>Vị trí: Thọ Quang Sơn, Đà Nẵng</p>
+            <p>Hải Đăng Tiên Sa hay còn gọi là Hải Đăng Sơn Trà là địa điểm được Pháp xây dựng và chính thức đưa vào hoạt động năm 1992. Đây được mệnh danh là ngọn hải đăng đẹp nhất Việt Nam được xây dựng nhằm mục đích giúp các ngư dân xác định vị trí hoạt động của mình trong phạm vi vùng biển Huế và Đà Nẵng. Khách du lịch khám phá Đà Nẵng có thể đến đây để ngắm nhìn trời đất rất tuyệt vời.</p>
+        </div>
+    </div>
+    <footer>Copyright@ 2023 by Tui</footer>
+</body>
+</html>

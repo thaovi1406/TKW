@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .navbar
+        {
+            background-color: rgba(49, 49, 52, 0.726);
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .menu
+        {
+            justify-content: flex-end;
+        }
+        .menu>a
+        {
+            text-decoration: none;
+            color: white;
+            margin: 10px;
+        }
+        .gioithieu
+        {
+            background-color: rgba(49, 49, 52, 0.726);
+            padding: 50px;
+            text-align: center;
+        }
+        .gioithieu>h2
+        {
+            color: white;
+            font-size: 22pt;
+        }
+        .gioithieu>p
+        {
+            color: rgba(242, 227, 227, 0.59);
+        }
+        button
+        {
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            margin: 7px;
+        }
+        .nut1
+        {
+            background-color: rgba(10, 10, 228, 0.934);
+        }
+        .nut2
+        {
+            background-color: rgba(49, 49, 52, 0);
+            border: 1px solid white;
+        }
+        .main
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+        .fa-layer-group, .fa-building, .fa-toggle-on
+        {
+            background-color: blue;
+            width: 40px;
+            height: 40px;
+            color: white;
+            text-align: center;
+            align-content: center;
+            border-radius: 7px;
+        }
+        .fa-arrow-right-long
+        {
+            color: rgba(0, 0, 255, 0.834);
+        }
+        .muiten>a
+        {
+            text-decoration: none;
+        }
+        .main1, .main2, .main3
+        {
+            margin-right: 20px;
+        }
+        @media (max-width:768px)
+        {
+            .main
+            {
+                grid-template-columns: 1fr;
+                margin-left: 20px;
+            }
+            .main2, .main3
+            {
+                margin-top: 20px;
+            }
+            button
+            {
+                width: 80%;
+            }
+            .navbar
+            {
+                flex-wrap: wrap;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="navbar">
+            <div>Start Bootstrap</div>
+            <div class="menu">
+                <a href="#" class="me">Home</a>
+                <a href="#" class="me">About</a>
+                <a href="#" class="me">Contact</a>
+                <a href="#" class="me">Service</a>
+            </div>
+        </div>
+        <div class="gioithieu">
+            <h2>Present your business in a whole new way</h2>
+            <p>Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit!
+            </p>
+            <button class="nut1">Get Started</button>
+            <button class="nut2">Learn More</button>
+        </div>
+        <div class="main">
+            <div class="main1">
+                <i class="fa-solid fa-layer-group"></i>
+                <h3>Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                <div class="muiten">
+                    <a href="#">Call to action</a>
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
+            </div>
+            <div class="main2">
+                <i class="fa-solid fa-building"></i>
+                <h3>Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                <div class="muiten">
+                    <a href="#">Call to action</a>
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
+            </div>
+            <div class="main3">
+                <i class="fa-solid fa-toggle-on"></i>
+                <h3>Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                <div class="muiten">
+                    <a href="#">Call to action</a>
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .message {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" onmouseover="showMessage('Bạn đang di chuột vào đoạn văn!')" onmouseout="showMessage('Bạn đã di chuột ra ngoài đoạn văn!')">
+    <h2>Di chuột vào đoạn văn</h2>
+    <p>Đây là một đoạn văn. Hãy thử di chuột vào nó!</p>
+  </div>
+  <p id="tb" class="message"></p>
+  <button type="button" onclick="alert('helo')">hi</button>
+  <script>
+    function showMessage(message) {
+      document.getElementById("tb").textContent= message;
+    }
+  </script>
+</body>
+</html>

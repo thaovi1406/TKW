@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .anh1, .anh3, .anh4
+        {
+            text-align: center;
+        }
+        img
+        {
+            width: 300px;
+            min-height: 200px;
+            max-width: 100%;
+        }
+        .anh, .anh2
+        {
+            margin-left: 40px;
+        }
+        .form
+        {
+            margin-left: 20px;
+        }
+        fieldset, .input 
+        {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="anh">
+        <div class="anh1">
+            <h1>Welcome to Our Dog Photos</h1>
+            <img src="./image/Pic1.png" alt="">
+        </div>      
+        <h3>Dog Lists</h3>
+        <ul>
+            <li>cat nip</li>
+            <li>laser pointers</li>
+            <li>lasagna</li>
+        </ul>
+    </div>
+    <div class="anh2">
+        <div class="anh3">
+            <img src="./image/Pic2.png" alt=""> <br>
+            <span>Cats <i>love</i> lasagna</span>
+        </div>
+        <h3>Top 3 things dogs hate</h3>
+        <ol>
+            <li>flea treatment</li>
+            <li>thunder</li>
+            <li>other cats</li>
+        </ol>
+        <div class="anh4">
+            <img src="./image/Pic3.png" alt="">
+            <hr>
+            <span>Dogs <b>hate</b> other cats.</span>
+        </div>    
+    </div>
+    <form action="">
+        <h2>Dog Form</h2>
+        <fieldset>
+            <legend>Is your dog an big or small cat?</legend>
+            <input type="radio" name="size" id="big">
+            <label for="big">Big</label>
+            <input type="radio" name="size" id="small" checked>
+            <label for="small">Small</label>
+        </fieldset>
+        <fieldset>
+            <legend>What's your cat's personality?</legend>
+            <input type="checkbox" name="per" id="loving"  checked>
+            <label for="big">Loving</label>
+            <input type="checkbox" name="per" id="lazy">
+            <label for="small">Lazy</label>
+            <input type="checkbox" name="per" id="energetic">
+            <label for="energetic">Energetic</label>
+        </fieldset>
+        <div class="input">
+            <input type="text" name="text" placeholder="Dog photo URL">
+            <input type="submit" value="Do Submit">
+        </div>
+        <hr>
+    </form>
+</body>
+</html>
+
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .grid
+        {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+        .navbar
+        {
+            background-color: rgba(29, 29, 48, 0.858);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            min-height: 40px;
+            align-items: center;
+        }
+        h2 
+        {
+            align-content: center;
+            margin-left: 10px;
+        }
+        .me
+        {
+            display: flex;
+            margin: 10px;
+        }
+        .menu
+        {
+            margin: 10px;
+            align-content: center;
+            text-decoration: none;
+            color: white;
+        }
+        .main
+        {
+            background-color: rgba(0, 128, 87, 0.716);
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 15pt;
+            flex: 1;
+        }
+        .line-container {
+            display: flex;
+            align-items: center; /* Căn giữa theo chiều dọc */
+            justify-content: center;
+            gap: 15px; /* Khoảng cách giữa các đường và ngôi sao */
+        }
+        
+        .line {
+            height: 3px; /* Chiều cao của đường line */
+            width: 40px; /* Chiều dài của đường line, bạn có thể tùy chỉnh */
+        }
+        
+        img
+        {
+            width: 200px;
+        }
+        .footer
+        {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px 0;
+        }
+        a:hover
+        {
+            background-color: rgba(0, 128, 0, 0.275);
+            border-radius: 40px;
+            height: 30px;
+        }
+        @media (max-width:768px)
+        {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            .me {
+                justify-content: center;
+                text-align: center;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+            .menu {
+                display: block;
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="navbar">
+            <h2>START BOOTSTRAP</h2>
+            <div class="me">
+                <a href="#" class="menu">PORTFOLIO</a>
+                <a href="#" class="menu">ABOUT</a>
+                <a href="#" class="menu">CONTACT</a>
+            </div>
+            
+        </div>
+        <div class="main">
+            <img src="/image/ava.png" alt="">
+            <h2>START BOOTSTRAP</h2>
+            <div class="line-container">
+                <div class="line" style="background-color: white"></div>
+                <i class="fa-solid fa-star" style="color: white;"></i>
+                <div class="line" style="background-color: white"></div>
+            </div>
+            <p>Graphic Artist - Web Designer - Illustrator</p>
+        </div>
+        <div class="footer">
+            <h2>PORTFOLIO</h2>
+            <div class="line-container">
+                <div class="line" style="background-color: black;"></div>
+                <i class="fa-solid fa-star" style="color: black;"></i>
+                <div class="line" style="background-color: black;"></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

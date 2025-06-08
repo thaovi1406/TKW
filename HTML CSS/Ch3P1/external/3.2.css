@@ -1,0 +1,15 @@
+p {
+    background-color: yellow;
+    color: red;
+}
+
+li {
+    color:  rgba(25, 197, 25, 0.781);
+    border: 0.5px dashed black;
+    margin: 3px;
+    width: fit-content;
+    margin-left: -27px;
+}
+body {
+    background-color: #fff5ee;
+}

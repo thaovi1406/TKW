@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .hop 
+        {
+            border: 1px solid black;
+            width: 300px;
+            height: 400px;
+            display: flex;
+        }
+        .cot 
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 200px;
+        }
+        .tren
+        {
+            border: 1px solid black;
+            width: 100%;
+            background-color: green;
+        }
+        .duoi 
+        {
+            border: 1px solid black;
+            width: 100%;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="hop">
+        <div class="cot">
+            <div class="tren" style="flex-basis: 25%;">25%</div>
+            <div class="duoi" style="flex-basis: 20%;">20%</div>
+        </div>
+        <div class="cot">
+            <div class="tren" style="flex-basis: 45%">45%</div>
+            <div class="duoi" style="flex-basis: 40%;">40%</div>
+        </div>
+        <div class="cot">
+            <div class="tren" style="flex-basis: 15%;">15%</div>
+            <div class="duoi" style="flex-basis: 50%;">50%</div>
+        </div>
+        <div class="cot">
+            <div class="tren" style="flex-basis: 30%;">30%</div>
+            <div class="duoi" style="flex-basis: 40%;">40%</div>
+        </div>
+    </div>
+</body>
+</html>

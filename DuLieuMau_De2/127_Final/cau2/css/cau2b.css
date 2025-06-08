@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+#preview {
+  width: 430px;
+  height: 200px;
+  margin: 20px auto;
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ccc;
+  font-size: 18px;
+  color: #333;
+  line-height: 30px;
+  text-align: justify;
+  padding: 0 20px 0 20px;
+}
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.thumbnail img {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.thumbnail img:hover {
+  transform: scale(1.1);
+  border-color: #007bff;
+}

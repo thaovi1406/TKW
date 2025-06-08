@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .message {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" onmouseover="showMessage('Bạn vừa di chuột vào đoạn văn!')" onmouseout="showMessage()">
+    Hãy di chuột vào đoạn văn này để xem thông báo
+  </div>
+  <p id="tb" class="message"></p>
+  <script>
+    function showMessage(message) {
+      document.getElementById("tb").textContent= message;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+- Chiều rộng width, chiều cao height
++ px: đvi đo cụ thể, đặt kích thước hộp 1 cách chính xác 
++ % : kích thước đc xác định dựa trên 1 phần trăm của kích thước phần tử cha hoặc cửa số trình duyệt
++ ems (em) : đc tính dựa trên kích thước của văn bản bên trong nó
+- min-width, max-width: giới hạn kích thước độ rộng
+- min-height, max-height 
+- overflow: quy định cách xử lý ndung khi nó vượt ra khỏi giới hạn của phần tử cha
++ visible: ndung có thể vượt ra ngoài phần tử cha (giá trị mặc định)
++ hidden: ndung bị ẩn nếu vượt quá giới hạn
++ scroll: thêm thanh cuộn cho phần tử nếu ndung vượt giới hạn 
++ auto: hiển thị thanh cuộn khi nó vượt quá
+- BORDER: đường viền của hộp, đệm dày lên 
++ border-width: thin là đg viền mỏng,  medium là trung bình, thick là dày
++ border-style: inset là đg viền bị ẩn xuống, outset thì nổi lên
+- MARGIN: k/c từ cái hộp đến các phần tử bên ngoài, muốn đoạn text ra giữa thì dùng margin trái phải auto
+- PADDING: k/c giữa đường viền đến các phần tử bên trong, kiểu như k/c từ ndung này tới đường viền, là sẽ ko dính sát vào nhau -> đệm dày lên
+- DISPLAY: inline là gộp thành 1 dòng, 
++ block: hiển thị như một khối, khi sử dụng giá trị block thành phần sẽ đứng một hàng độc lập so với thành phần trước và sau nó.
++ none: phần tử bị xóa khỏi trang, ko ảnh hưởng đến bố cục 
+- VISIBILITY: sự hiển thị của phần tử trên web
++ hidden: ẩn đi phần tử nhưng vẫn giữ nguyên ko gian, tức là cái khung đó bị ẩn đi nhưng chiều cao độ rộng vẫn giữ nguyên 
++ visible: nhìn thấy đc trên trang
+- B0RDER-IMAGE: áp dụng ảnh vào đường viền của bất kì hộp nào
++ cách xử lý các cạnh thẳng: - stretch: kéo dài hình ảnh
+                             - repeat: lặp lại hình ảnh
+                             - round: tương tư như repeat, nhưng nếu ô  ko khớp chính xác nó sẽ dãn hình ảnh ô sao cho chúng khớp.
+- BOX-SHADOW: đổ bóng cho cái box  
++độ lệch theo chiều ngang
+- BORDER-RADIUS: bo góc đg viền 
+- 1. background-color
+- 2. background-image: url(): bỏ cái đường dẫn hình ảnh vô, nó sẽ là nền phía dưới văn bản, chèn đc nhiều ảnh thì url nào viết sau thì nó sẽ chèn lên ảnh trước
+- 3. background-repeat: repeat-x -> lặp lại theo chiều ngang, repeat-y: theo chiều dọc 
+- 4. background-attachment: chỉ nằm ở 1 chỗ ko kéo dài ra hết trang (fixed là nằm đúng với position)
+- 5. background-position: vị trí ảnh 
+-> viết gộp: background: theo thứ tự 12345
+- float: là chuyển 1 phần tử sang góc trái hoặc phải của ko gian bao quanh nó

@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân loại nhóm khách hàng</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .logo {
+            padding: 0 20px 30px;
+            border-bottom: 1px solid #34495e;
+            margin-bottom: 20px;
+        }
+
+        .logo h3 {
+            color: #3498db;
+            font-size: 16px;
+        }
+
+        .nav-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-item:hover {
+            background-color: #34495e;
+        }
+
+        .nav-item.active {
+            background-color: #3498db;
+        }
+
+        .nav-item i {
+            width: 16px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: white;
+            padding: 15px 30px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #2c3e50;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-secondary {
+            background-color: #95a5a6;
+            color: white;
+        }
+
+        .btn-success {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid #bdc3c7;
+            color: #7f8c8d;
+        }
+
+        /* Content Area */
+        .content {
+            flex: 1;
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .groups-panel {
+            width: 350px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-header h3 {
+            font-size: 18px;
+            color: #2c3e50;
+        }
+
+        .search-box {
+            padding: 15px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .groups-list {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .group-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .group-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .group-item.active {
+            background-color: #e3f2fd;
+            border-left: 3px solid #3498db;
+        }
+
+        .group-name {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .group-info {
+            font-size: 12px;
+            color: #7f8c8d;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Detail Panel */
+        .detail-panel {
+            flex: 1;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .detail-content {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .customers-section {
+            margin-top: 30px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .customers-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .customers-table th,
+        .customers-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .customers-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .customer-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .add-customer-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .form-actions {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 500px;
+            max-width: 90vw;
+        }
+
+        .modal-header {
+            margin-bottom: 20px;
+        }
+
+        .modal-header h3 {
+            color: #2c3e50;
+        }
+
+        .close-btn {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+            color: #7f8c8d;
+        }
+
+        .alert {
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h3>📊 CRM SYSTEM</h3>
+                <small>QUẢN LÝ KHÁCH HÀNG</small>
+            </div>
+            <div class="nav-item">
+                <i>👥</i>
+                <span>Người dùng</span>
+            </div>
+            <div class="nav-item">
+                <i>📋</i>
+                <span>Đối tác</span>
+            </div>
+            <div class="nav-item">
+                <i>📅</i>
+                <span>Lịch</span>
+            </div>
+            <div class="nav-item active">
+                <i>🏷️</i>
+                <span>Nhóm khách hàng</span>
+            </div>
+            <div class="nav-item">
+                <i>📦</i>
+                <span>Kho hàng</span>
+            </div>
+            <div class="nav-item">
+                <i>💰</i>
+                <span>Bán hàng</span>
+            </div>
+            <div class="nav-item">
+                <i>📊</i>
+                <span>Báo cáo</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <h1>Phân loại nhóm khách hàng</h1>
+                <div class="header-actions">
+                    <button class="btn btn-outline">📤 Xuất dữ liệu</button>
+                    <button class="btn btn-secondary">🔍 Tìm kiếm</button>
+                    <button class="btn btn-primary" onclick="openCreateGroupModal()">➕ Tạo nhóm mới</button>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="content">
+                <!-- Groups Panel -->
+                <div class="groups-panel">
+                    <div class="panel-header">
+                        <h3>Danh sách nhóm</h3>
+                        <span class="btn btn-outline" style="font-size: 12px;">5 nhóm</span>
+                    </div>
+                    
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Tìm kiếm nhóm..." onkeyup="searchGroups(this.value)">
+                    </div>
+
+                    <div class="groups-list" id="groupsList">
+                        <div class="group-item active" onclick="selectGroup(this, 'vip')">
+                            <div class="group-name">Khách hàng VIP</div>
+                            <div class="group-info">
+                                <span>25 khách hàng</span>
+                                <span>Cập nhật: 2 giờ trước</span>
+                            </div>
+                        </div>
+                        
+                        <div class="group-item" onclick="selectGroup(this, 'new')">
+                            <div class="group-name">Khách hàng mới</div>
+                            <div class="group-info">
+                                <span>12 khách hàng</span>
+                                <span>Cập nhật: 1 ngày trước</span>
+                            </div>
+                        </div>
+                        
+                        <div class="group-item" onclick="selectGroup(this, 'potential')">
+                            <div class="group-name">Khách hàng tiềm năng</div>
+                            <div class="group-info">
+                                <span>48 khách hàng</span>
+                                <span>Cập nhật: 3 ngày trước</span>
+                            </div>
+                        </div>
+                        
+                        <div class="group-item" onclick="selectGroup(this, 'inactive')">
+                            <div class="group-name">Khách hàng không hoạt động</div>
+                            <div class="group-info">
+                                <span>8 khách hàng</span>
+                                <span>Cập nhật: 1 tuần trước</span>
+                            </div>
+                        </div>
+                        
+                        <div class="group-item" onclick="selectGroup(this, 'corporate')">
+                            <div class="group-name">Khách hàng doanh nghiệp</div>
+                            <div class="group-info">
+                                <span>15 khách hàng</span>
+                                <span>Cập nhật: 2 ngày trước</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detail Panel -->
+                <div class="detail-panel">
+                    <div class="detail-content">
+                        <div id="alertContainer"></div>
+                        
+                        <form id="groupForm">
+                            <div class="form-group">
+                                <label class="form-label">Tên nhóm *</label>
+                                <input type="text" class="form-input" id="groupName" value="Khách hàng VIP" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Mô tả</label>
+                                <textarea class="form-textarea" id="groupDescription" placeholder="Nhập mô tả cho nhóm khách hàng...">Nhóm khách hàng có giá trị giao dịch cao, được ưu tiên chăm sóc đặc biệt và nhận các ưu đãi độc quyền.</textarea>
+                            </div>
+
+                            <div class="customers-section">
+                                <div class="section-title">
+                                    Danh sách khách hàng trong nhóm
+                                    <button type="button" class="add-customer-btn" onclick="openAddCustomerModal()">
+                                        ➕ Thêm khách hàng
+                                    </button>
+                                </div>
+
+                                <table class="customers-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Khách hàng</th>
+                                            <th>Email</th>
+                                            <th>Số điện thoại</th>
+                                            <th>Ngày tham gia</th>
+                                            <th>Thao tác</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="customersTableBody">
+                                        <tr>
+                                            <td>
+                                                <div style="display: flex; align-items: center; gap: 10px;">
+                                                    <div class="customer-avatar">NA</div>
+                                                    <span>Nguyễn Văn A</span>
+                                                </div>
+                                            </td>
+                                            <td>nguyen.a@email.com</td>
+                                            <td>0123456789</td>
+                                            <td>15/03/2024</td>
+                                            <td>
+                                                <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;" onclick="removeCustomer(this)">Xóa</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div style="display: flex; align-items: center; gap: 10px;">
+                                                    <div class="customer-avatar">TT</div>
+                                                    <span>Trần Thị B</span>
+                                                </div>
+                                            </td>
+                                            <td>tran.b@email.com</td>
+                                            <td>0987654321</td>
+                                            <td>20/03/2024</td>
+                                            <td>
+                                                <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;" onclick="removeCustomer(this)">Xóa</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">💾 Lưu thay đổi</button>
+                                <button type="button" class="btn btn-secondary" onclick="resetForm()">🔄 Hủy bỏ</button>
+                                <button type="button" class="btn" style="background-color: #e74c3c; color: white;" onclick="deleteGroup()">🗑️ Xóa nhóm</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Group Modal -->
+    <div id="createGroupModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-btn" onclick="closeCreateGroupModal()">&times;</span>
+                <h3>Tạo nhóm khách hàng mới</h3>
+            </div>
+            <form id="createGroupForm">
+                <div class="form-group">
+                    <label class="form-label">Tên nhóm *</label>
+                    <input type="text" class="form-input" id="newGroupName" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Mô tả</label>
+                    <textarea class="form-textarea" id="newGroupDescription" placeholder="Nhập mô tả cho nhóm khách hàng..."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Tạo nhóm</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeCreateGroupModal()">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Customer Modal -->
+    <div id="addCustomerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-btn" onclick="closeAddCustomerModal()">&times;</span>
+                <h3>Thêm khách hàng vào nhóm</h3>
+            </div>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Tìm kiếm khách hàng..." onkeyup="searchCustomers(this.value)">
+            </div>
+            <div style="max-height: 300px; overflow-y: auto; margin: 20px 0;">
+                <div class="group-item" onclick="selectCustomerToAdd(this)">
+                    <div class="group-name">Lê Văn C</div>
+                    <div class="group-info">
+                        <span>le.c@email.com</span>
+                        <span>0111222333</span>
+                    </div>
+                </div>
+                <div class="group-item" onclick="selectCustomerToAdd(this)">
+                    <div class="group-name">Phạm Thị D</div>
+                    <div class="group-info">
+                        <span>pham.d@email.com</span>
+                        <span>0444555666</span>
+                    </div>
+                </div>
+                <div class="group-item" onclick="selectCustomerToAdd(this)">
+                    <div class="group-name">Hoàng Văn E</div>
+                    <div class="group-info">
+                        <span>hoang.e@email.com</span>
+                        <span>0777888999</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-primary" onclick="addSelectedCustomers()">Thêm khách hàng</button>
+                <button type="button" class="btn btn-secondary" onclick="closeAddCustomerModal()">Hủy</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedCustomers = [];
+        let currentGroupId = 'vip';
+
+        // Group management functions
+        function selectGroup(element, groupId) {
+            // Remove active class from all groups
+            document.querySelectorAll('.group-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Add active class to selected group
+            element.classList.add('active');
+            currentGroupId = groupId;
+            
+            // Load group data (simulate)
+            loadGroupData(groupId);
+        }
+
+        function loadGroupData(groupId) {
+            const groupData = {
+                'vip': {
+                    name: 'Khách hàng VIP',
+                    description: 'Nhóm khách hàng có giá trị giao dịch cao, được ưu tiên chăm sóc đặc biệt và nhận các ưu đãi độc quyền.'
+                },
+                'new': {
+                    name: 'Khách hàng mới',
+                    description: 'Nhóm khách hàng mới đăng ký trong vòng 30 ngày gần đây.'
+                },
+                'potential': {
+                    name: 'Khách hàng tiềm năng',
+                    description: 'Nhóm khách hàng có tiềm năng phát triển, cần được chăm sóc để chuyển đổi thành khách hàng thân thiết.'
+                },
+                'inactive': {
+                    name: 'Khách hàng không hoạt động',
+                    description: 'Nhóm khách hàng không có giao dịch trong 6 tháng gần đây.'
+                },
+                'corporate': {
+                    name: 'Khách hàng doanh nghiệp',
+                    description: 'Nhóm khách hàng là các doanh nghiệp, công ty có nhu cầu mua hàng số lượng lớn.'
+                }
+            };
+
+            const data = groupData[groupId];
+            if (data) {
+                document.getElementById('groupName').value = data.name;
+                document.getElementById('groupDescription').value = data.description;
+            }
+        }
+
+        function searchGroups(query) {
+            const groups = document.querySelectorAll('.group-item');
+            groups.forEach(group => {
+                const groupName = group.querySelector('.group-name').textContent.toLowerCase();
+                if (groupName.includes(query.toLowerCase())) {
+                    group.style.display = 'block';
+                } else {
+                    group.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal functions
+        function openCreateGroupModal() {
+            document.getElementById('createGroupModal').style.display = 'block';
+        }
+
+        function closeCreateGroupModal() {
+            document.getElementById('createGroupModal').style.display = 'none';
+            document.getElementById('createGroupForm').reset();
+        }
+
+        function openAddCustomerModal() {
+            document.getElementById('addCustomerModal').style.display = 'block';
+            selectedCustomers = [];
+        }
+
+        function closeAddCustomerModal() {
+            document.getElementById('addCustomerModal').style.display = 'none';
+            selectedCustomers = [];
+        }
+
+        // Customer management functions
+        function selectCustomerToAdd(element) {
+            element.classList.toggle('active');
+            const customerName = element.querySelector('.group-name').textContent;
+            const customerEmail = element.querySelector('.group-info span').textContent;
+            
+            if (element.classList.contains('active')) {
+                selectedCustomers.push({
+                    name: customerName,
+                    email: customerEmail,
+                    phone: '0123456789' // Mock data
+                });
+            } else {
+                selectedCustomers = selectedCustomers.filter(c => c.name !== customerName);
+            }
+        }
+
+        function addSelectedCustomers() {
+            const tableBody = document.getElementById('customersTableBody');
+            
+            selectedCustomers.forEach(customer => {
+                const row = document.createElement('tr');
+                const initials = customer.name.split(' ').map(n => n[0]).join('').toUpperCase();
+                
+                row.innerHTML = `
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div class="customer-avatar">${initials}</div>
+                            <span>${customer.name}</span>
+                        </div>
+                    </td>
+                    <td>${customer.email}</td>
+                    <td>${customer.phone}</td>
+                    <td>${new Date().toLocaleDateString('vi-VN')}</td>
+                    <td>
+                        <button class="btn btn-outline" style="padding: 4px 8px; font-size: 12px;" onclick="removeCustomer(this)">Xóa</button>
+                    </td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+            
+            closeAddCustomerModal();
+            showAlert('Đã thêm ' + selectedCustomers.length + ' khách hàng vào nhóm!', 'success');
+        }
+
+        function removeCustomer(button) {
+            if (confirm('Bạn có chắc chắn muốn xóa khách hàng này khỏi nhóm?')) {
+                button.closest('tr').remove();
+                showAlert('Đã xóa khách hàng khỏi nhóm!', 'success');
+            }
+        }
+
+        function searchCustomers(query) {
+            // Implementation for searching customers in modal
+            console.log('Searching customers:', query);
+        }
+
+        // Form functions
+        function resetForm() {
+            loadGroupData(currentGroupId);
+            showAlert('Đã khôi phục dữ liệu ban đầu!', 'success');
+        }
+
+        function deleteGroup() {
+            if (confirm('Bạn có chắc chắn muốn xóa nhóm này? Hành động này không thể hoàn tác.')) {
+                showAlert('Nhóm đã được xóa thành công!', 'success');
+                // Remove group from list
+                document.querySelector('.group-item.active').remove();
+                // Select first remaining group
+                const firstGroup = document.querySelector('.group-item');
+                if (firstGroup) {
+                    firstGroup.click();
+                }
+            }
+        }
+
+        // Alert function
+        function showAlert(message, type) {
+            const alertContainer = document.getElementById('alertContainer');
+            const alertClass = type === 'success' ? 'alert-success' : 'alert-error';
+            
+            alertContainer.innerHTML = `
+                <div class="alert ${alertClass}">
+                    ${message}
+                </div>
+            `;
+            
+            setTimeout(() => {
+                alertContainer.innerHTML = '';
+            }, 3000);
+        }
+
+        // Form submission handlers
+        document.getElementById('groupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const groupName = document.getElementById('groupName').value.trim();
+            
+            if (!groupName) {
+                showAlert('Vui lòng nhập tên nhóm!', 'error');
+                return;
+            }
+            
+            // Check for duplicate group names
+            const existingGroups = Array.from(document.querySelectorAll('.group-name')).map(el => el.textContent);
+            const currentGroupName = document.querySelector('.group-item.active .group-name').textContent;
+            
+            if (existingGroups.includes(groupName) && groupName !== currentGroupName) {
+                showAlert('Tên nhóm đã tồn tại! Vui lòng chọn tên khác.', 'error');
+                return;
+            }
+            
+            // Update group name in sidebar
+            document.querySelector('.group-item.active .group-name').textContent = groupName;
+            
+            showAlert('Đã lưu thông tin nhóm thành công!', 'success');
+        });
+
+        document.getElementById('createGroupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const groupName = document.getElementById('newGroupName').value.trim();
+            const groupDescription = document.getElementById('newGroupDescription').value.trim();
+            
+            if (!groupName) {
+                showAlert('Vui lòng nhập tên nhóm!', 'error');
+                return;
+            }
+            
+            // Check for duplicate group names
+            const existingGroups = Array.from(document.querySelectorAll('.group-name')).map(el => el.textContent);
+            
+            if (existingGroups.includes(groupName)) {
+                showAlert('Tên nhóm đã tồn tại! Vui lòng chọn tên khác.', 'error');
+                return;
+            }
+            
+            // Add new group to list
+            const groupsList = document.getElementById('groupsList');
+            const newGroupItem = document.createElement('div');
+            newGroupItem.className = 'group-item';
+            newGroupItem.onclick = function() { selectGroup(this, 'new_' + Date.now()); };
+            
+            newGroupItem.innerHTML = `
+                <div class="group-name">${groupName}</div>
+                <div class="group-info">
+                    <span>0 khách hàng</span>
+                    <span>Vừa tạo</span>
+                </div>
+            `;
+            
+            groupsList.appendChild(newGroupItem);
+            
+            closeCreateGroupModal();
+            showAlert('Đã tạo nhóm mới thành công!', 'success');
+            
+            // Select the new group
+            newGroupItem.click();
+            document.getElementById('groupName').value = groupName;
+            document.getElementById('groupDescription').value = groupDescription;
+        });
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            const createModal = document.getElementById('createGroupModal');
+            const addModal = document.getElementById('addCustomerModal');
+            
+            if (e.target === createModal) {
+                closeCreateGroupModal();
+            }
+            if (e.target === addModal) {
+                closeAddCustomerModal();
+            }
+        });
+    </script>
+</body>
+</html>

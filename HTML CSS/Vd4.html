@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <form action="1" method="post">
+        <p>Họ tên: <input type="text" name="hoten"></p>
+        <p>Ngày sinh: <input type="date" name="ngaysinh" id="ngaysinh"></p>
+        <p>Địa chỉ: <textarea name="diachi" id="" cols="20" rows="5"></textarea></p>
+        <p>
+            Giới tính: <input type="radio" name="gioitinh" id="nam">Nam
+            <input type="radio" name="gioitinh" id="nu"> Nữ
+        </p>
+        <p><input type="submit" value="Gửi">
+        <input type="reset" value="Xóa"></p>
+    </form>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu {
+            background-color: #00BFFF;
+            text-align: center;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul li {
+            display: inline-block;
+            padding: 15px 20px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+
+        /* Điểm dừng cho màn hình >= 1024px */
+        @media (min-width: 1024px) {
+            .menu ul li {
+                padding: 15px 30px;
+            }
+        }
+
+        /* Điểm dừng cho màn hình >= 768px */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .menu ul li {
+                padding: 15px 40px;
+            }
+        }
+
+        /* Style cho màn hình nhỏ hơn 768px */
+        @media (max-width: 767px) {
+            .menu ul li {
+                display: block;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

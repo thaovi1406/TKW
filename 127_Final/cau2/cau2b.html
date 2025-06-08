@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiển Thị Thông Tin Sản Phẩm</title>
+    <link rel="stylesheet" href="./css/cau2b.css" />
+    <script src="./js/cau2b.js"></script>
+  </head>
+  <body>
+    <h1>Hiển Thị Thông Tin Sản Phẩm</h1>
+    <div id="preview">
+      <p id="productDescription"></p>
+    </div>
+
+    <div class="thumbnails">
+      <div class="thumbnail">
+        <img
+          src="./img/product1.jpg"
+          alt="Image 1"
+          onmouseover="showDescription(1)"
+          onmouseout="clearDescription()"
+        />
+      </div>
+      <div class="thumbnail">
+        <img
+          src="./img/product2.jpg"
+          alt="Image 2"
+          onmouseover="showDescription(2)"
+          onmouseout="clearDescription()"
+        />
+      </div>
+      <div class="thumbnail">
+        <img
+          src="./img/product3.jpg"
+          alt="Image 3"
+          onmouseover="showDescription(3)"
+          onmouseout="clearDescription()"
+        />
+      </div>
+      <div class="thumbnail">
+        <img
+          src="./img/product4.jpg"
+          alt="Image 4"
+          onmouseover="showDescription(4)"
+          onmouseout="clearDescription()"
+        />
+      </div>
+    </div>
+    <script>
+      function showDescription(x) {
+        if (x==1) {
+          document.getElementById("productDescription").innerHTML = "Sản phẩm 1: Đây là sản phẩm 1";
+        }
+        else if (x==2) {
+          document.getElementById("productDescription").innerHTML = "Sản phẩm 2: Đây là sản phẩm 2";
+        }
+        if (x==3) {
+          document.getElementById("productDescription").innerHTML = "Sản phẩm 3: Đây là sản phẩm 3";
+        }
+        if (x==4) {
+          document.getElementById("productDescription").innerHTML = "Sản phẩm 4: Đây là sản phẩm 4";
+        }
+        function clearDescription() {
+          document.getElementById("productDescription").innerHTML = "";
+        }
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+FLEXBOX
+1. flex container: thẻ chứa
+2. flex item: thẻ con của container
+- main axis: trục chính có thể xếp theo chiều ngang hoặc dọc -> flex item nó cũng sẽ theo chiều mà đã xếp
++ main start: quyết định item sẽ theo hướng nào, item xếp theo thứ tự, mặc định nằm bên trái
++ main end: tương tự
+- cross axis: trục luôn vuông góc với trục chính
+-> hiển thị nhiều hàng, hàng trên hoặc dưới
++ cross start
++ cross end
++ cross size: chiều song song với cross axis
+- main size: kích thước của flex item
+3. CÁC THUỘC TÍNH 
+- display: flex/ inline flex
+- flex-direction: thay đổi phương hướng của main axis, mặc định là row là nằm ngang, còn dọc là Column
++ row: Các hạng mục được đặt cùng hướng với hướng của từ trong văn bản.
++ row-reverse: Các hạng mục được đặt ngược hướng với hướng của từ trong văn bản.
++ column: Các hạng mục được đặt từ trên xuống dưới.
++ column-reverse: Các hạng mục được đặt từ dưới lên trên.
+- flex-wrap: đưa item lên xuống dòng hoặc đẩy lên trên
++ nowrap
++ wrap: xuống dòng
++ wrap-reverse: đẩy ngược lên trên
+- flex-basis: thay đổi kích thước cho main size 
+- justify-content: căn các flex item -> dành cho container, sắp xếp các hạng mục theo chiều ngang
+flex-start: Các hạng mục sẽ được sắp xếp về phía bên trái của hộp chứa.
+flex-end: Các hạng mục sẽ được sắp xếp về phía bên phải của hộp chứa.
+center: Các hạng mục sẽ được sắp xếp ở giữa chính của hộp chứa.
+space-between: Các hạng mục sẽ được trình bày với khoảng cách bằng nhau giữa chúng.
+space-around: Các hạng mục sẽ được trình bày với khoảng cách bằng nhau xung quanh chúng
+space-evenly: tạo khoảng cách giữa các phần tử bằng nhau 
+(flex-start, flex-end, center, space-between, space-around)
+- justify-self: -> dành cho item
+(flex-start, flex -end, center)
+- align-content: tương tự justify, nhưng nó sẽ cùng với phương hướng trục cross axis
+thiết lập cách các dòng có khoảng cách xa nhau 
+flex-start: Các dòng được dồn về phía trên cùng của hộp chứa.
+flex-end: Các dòng được dồn về phía dưới cùng của hộp chứa.
+center: Các dòng được dồn về trung tâm của hộp chứa.
+space-between: Các dòng được trình bày với khoảng cách bằng nhau giữa chúng.
+space-around: Các dòng sẽ được trình bày với khoảng cách bằng nhau xung quanh chúng.
+stretch: Các dòng sẽ được kéo dài để phù hợp với hộp chứa.
+(flex-start, flex -end, center)
+- align-self: Sắp xếp một hạng mục flex dọc theo trục ngang, ghi đè lên giá trị của align-items, dùng cho 1 phần tử riêng biệt
+(flex-start, flex -end, center)
+- flex-grow: thay đổi kích thước flex item, dãn ra 
+- flex-shrink: tương tự grow, hẹp lại
+- flex: dùng gộp cho  flex basis, grow, shrink
+- order: theo thứ tự vị trí mà mình muốn
+- align-items: sắp xếp những hạng mục theo chiều dọc
++ flex-start: Các hạng mục sẽ được sắp xếp phía trên của hộp chứa.
++ flex-end: Các hạng mục sẽ được sắp xếp phía dưới cùng của hộp chứa.
++ center: Các hạng mục sẽ được sắp xếp ở giữa chính của hộp chứa.
++ baseline: Các hạng mục sẽ được hiển thị ở đường cơ bản của hộp chứa.
++ stretch: Các hạng mục sẽ được kéo dài để phù hợp với hộp chứa, các cột bằng nhau 
+
+- position
++ relative: vị trị tương đối, ko phụ thuộc vào đối tượng khác, lấy vị trị nó đang đứng làm gốc tọa độ
+di chuyển dùng top, bottom, left, right: đè lên các phần khác
++ absolute: vị trí tuyệt đối, phụ thuộc thẻ cha gần nhất làm gốc 
++ fixed: phụ thuộc vào trình duyệt, nó sẽ đứng yên, ko dịch chuyển 
++ sticky: kiểu khi kéo nd thì cái cục có vị trí này nó sẽ ko di chuyển

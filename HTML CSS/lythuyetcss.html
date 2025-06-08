@@ -1,0 +1,90 @@
+selectors: lấy 1 phần tử từ thẻ html
+ id: dùng để phân biệt nhiều cái giống nhau
+ cách gọi: #id thì sẽ gọi 1 cái mà có id đó
+ id: là duy nhất, ko được trùng
+ class: 1 thuộc tính chung cho nhiều đối tượng 
+ cách gọi: .class {}
+ *Mức độ ưu tiên
+ -internal, external: ko ưu tiên, chỉ ưu tiên những cái viết sau cùng
+ 
+1. SELECTOR: chỉ định phần tử nào mà quy tắc đc áp dụng, cùng 1 quy tắc có thể áp dụng cho nhiều phần tử nếu tách tên các ptu bằng dấu phẩy
+ vd: p {font_size:12} -> nghĩa là tất cả phần tử p sẽ có size là 12
+-universal selector: áp dụng cho tất cả phần tử trong trang
+vd: *{}
+-type selector: bộ chọn theo tên thẻ
+vd: h1,h2,h3 {} -> thẻ h1, h2, h3 sẽ có cùng định dạng
+-class selector: những thẻ có chứa class nào đó thì sẽ có định dạng đã được chỉ định trong class đó
+vd: .tên class {} hoặc chỉ định 1 thẻ nào của 1 class thì ghi tên thẻ.tên class {} vd -> p.tên class {} 
+-id selector: nó sẽ định dạng cho  duy nhất 1 nguyên tố html có chứa ID nhất định (cách gọi:#tên id)
+vd: 1 id có định dạng là màu đỏ thì ví dụ CHỈ thẻ nào có chứa id này mới có định dạng là màu đỏ
+-child selector: quy định những thuộc tính con
+vd: li>a{} -> là thẻ a bên trong thẻ li có thuộc tính như nào, chỉ dùng khi thẻ a là con trực tiếp của thẻ li <li><a></a></li>
+<li><h1><a></a></h1></li> -> như này thì ko sử dụng được 
+-descendant selector: cũng là thuộc tính con nhưng ko nhất thiết là con trực tiếp như child selector
+vd: <li><h1><a></a></h1></li> -> li a {} -> nghĩa là tất cả thẻ a trong thẻ li có cùng định dạng nào đó
+-adjacent sibling selector: bộ chọn các thẻ liền kề
+vd: h1+p {}: là cứ sau thẻ h1 có thẻ p thì thẻ p có định dạng nào đó
+<h1></h1> <p></p>
+-general sibling selector: tương tự -adjacent nhưng nó sẽ ảnh hưởng cả hai thẻ h1 và p
+vd: h1-p{} 
+
+2. CÁCH DÙNG CSS
+-Inline: dùng trực tiếp bên trong các phần tử, sử dụng thuộc tính style. Chỉ ảnh hưởng đúng nội dung của 1 thẻ nhất định
+-internal: đặt trong thẻ <style></style> và đặt trong khối <head></head>. Nó sẽ áp dụng cho tất cả những thẻ 
+Vd: p { color: aqua;
+        font-size: medium;} -> là những thẻ p xuất hiện đều sẽ có định dạng như vậy
+-external: tạo 1 tập tin css riêng và sau đó liên kết nó với trang html bằng cách sử dụng thẻ <link> trong phần <head></head> của trang html -> nên sử dụng external
+--lợi ích: cho phép tất cả các trang sử dụng cùng quy tắc thay vì từng cái, dễ dàng chỉnh sửa thay vì phải chỉnh từng trang, giữ nội dung riêng biệt
+
+3. MỨC ĐỘ ƯU TIÊN 
+-Nếu có nhiều bộ chọn khác nhau:
++ những bộ chọn nào cụ thể hơn sẽ ưu tiên, là càng cụ thể càng đi sâu hơn thì ưu tiên
+vd: quy định toàn bộ các phần tử trong trang màu đỏ và 1 thẻ h1 quy định đoạn chữ trong đó màu xanh thì sẽ ưu tiên thẻ h1, còn những chỗ khác k quy định cụ thể thì vẫn màu đỏ.
++ còn có những bộ chọn giống nhau thì sẽ ưu tiên cái nào viết sau cùng
++ quy tắc important: viết !important sau giá trị của bất kì thuộc tính nào để chỉ ra nó nên đc coi là quan trọng hơn so với các quy tắc khác, phải ưu tiên đầu 
+
+4. KẾ THỪA
+-Nếu chỉ định các thuộc tính font-family hoặc color trên phần tử <body>, chúng sẽ đc áp dung cho hầu hết các phần tử con
+từ khóa inherit là sẽ đc kế thừa
+
+5. opacity: độ mờ từ 0-1
+rgba -> a là anphal chỉ độ trong suốt
+hsl(màu sắc, độ bão hòa, độ sáng) hue-saturation-lightness
+
+6. TEXT
+-font-weight: độ đậm nhạt của văn bản (light, medium, bold, black)
+-style: normal, italic, oblique
+-stretch: condensed (kéo chữ nhỏ lại), regular, extended (dãn chữ)
+-@font-face: dùng kiểu chữ nào cũng đc dù kiểu chữ đó ko đc mặc định trên hệ thống người dùng
+-text-transform:
++uppercase: viết hoa toàn bộ
++lowercase: viết thường
++capitalize: viết hoa chữ cái đầu
+-text-decoration: thay đổi trang trí của văn bản
++none: ko có trang trí nào cho văn bản
++underline: gạch chân dưới văn bản
++overline: gạch trên văn bản 
++line-through: gạch ngang văn bản 
++underline overline: gạch chân và gạch trên cùng văn bản
++underline line-through: gạch chân và gạch ngang văn bản 
+- line-height: điều chỉnh độ cao của dòng văn bản, tức là khoảng cách giữa các dòng trong 1 phần tử văn bản, kiểu là dãn dòng
+-letter-spacing: xác định k/c giữa các ký tự trong văn bản 
+-word-spacing: xác định k/c giữa các từ trong văn bản 
+-vertical-align: căn chỉnh theo chiều dọc hoặc nội dung bên trong 1 phần tử
+vd: trong 1 cái khung thì chỉnh nd tùy ý ở vị trí nào đó trong khung
++baseline: căn chỉnh theo đường cơ sở (giá trị mặc định)
++top: căn chỉnh nội dung lên trên của phần tử chứa nó (text-top, text-bottom)
++middle: căn theo giữa chiều dọc 
+-text-indent: xác định lề đầu dòng của vb trong 1 phần tử, đc xác định từ lề trái của phần tử tới lề trái của văn bản, có thể nhận số âm
+-text-shadow: đổ bóng vào văn bản
++h-shadow: xác định độ dài của bóng đổ theo trục ngang. Gía trị dương sẽ là bên phải, còn âm là bên trái
++v-shadow: theo trục đứng. giá trị dương là bên dưới, giá trị âm là bên trên
++blur-radius: độ mờ của bóng đổ, giá trị càng lớn thì bóng đổ càng mờ.
++color: màu sắc của bóng đổ
+-:first-letter: quy định chữ đầu tiên hoặc có thể thay thế thành thẻ nào cũng đc
+-:first-line: dòng đầu tiên
+-:link: định dạng liên kết mà chưa đc click vào ví dụ nó có màu gì,...
+-:visited: định dạng link đã click
+-:hover: khi đưa trỏ chuột vào cái link nó sẽ có những định dạng gì vd màu đỏ,...
+-:active: đc kích hoạt khi phần tử đang trong trạng thái nhấn hoặc đc kích hoạt bằng bất kỳ phương thức nào 
+-:focus: đc kích hoạt khi phần tử đang trong trạng thái đc tập trung, tức là khi người dùng truy cập vào phần tử bằng bàn phím hoặc trình duyệt

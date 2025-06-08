@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .grid 
+        {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; 
+            background-color: rgba(128, 128, 128, 0.436);
+        }
+        .item 
+        {
+            background-color: white;
+            flex-basis: calc(25% - 30px);
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }
+        @media (max-width: 768px) 
+        {
+            .item 
+            {
+                flex-basis:calc(50% - 30px); 
+                padding-left: 5px;
+                text-align: center;
+            }
+        }
+        @media (min-width:1024px)
+        {
+            .item
+            {
+                flex-basis: calc(25% - 30px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="item">
+            <h3>Sản phẩm 1</h3> 
+            <span>Mô tả sản phẩm 1</span>
+        </div>
+        <div class="item">
+            <h3>Sản phẩm 2</h3> 
+            <span>Mô tả sản phẩm 2</span>
+        </div>
+        <div class="item">
+            <h3>Sản phẩm 3</h3> 
+            <span>Mô tả sản phẩm 3</span>
+        </div>
+        <div class="item">
+            <h3>Sản phẩm 4</h3> 
+            <span>Mô tả sản phẩm 4</span>
+        </div>
+        <div class="item">
+            <h3>Sản phẩm 5</h3> 
+            <span>Mô tả sản phẩm 5</span>
+        </div>
+        <div class="item">
+            <h3>Sản phẩm 6</h3> 
+            <span>Mô tả sản phẩm 6</span>
+        </div>
+        <div class="item">
+            <h3>Sản phẩm 7</h3> 
+            <span>Mô tả sản phẩm 7</span>
+        </div>
+        <div class="item">
+            <h3>Sản phẩm 8</h3> 
+            <span>Mô tả sản phẩm 8</span>
+        </div>
+    </div>
+</body>
+</html>

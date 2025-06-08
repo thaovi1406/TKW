@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #name {
+            margin:10px;
+        }
+        #gioitinh {
+            margin: 15px;
+        }
+        #birthday {
+            margin: 10px;
+        }
+        label {
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <label for="name">Họ và tên</label>
+    <input type="text" name="name" id="name" onkeydown="document.getElementById('a').innerHTML = document.getElementById('name').value">
+    <span>Họ và tên: <span id="a"></span></span> <br>
+
+    <label for="birthday">Ngày sinh</label>
+    <input type="text" name="birthday" id="birthday" onkeydown="document.getElementById('b').innerHTML = document.getElementById('birthday').value"> 
+    <span>Ngày sinh: <span id="b"></span></span><br>
+
+    <label for="gioitinh">Giới tính</label>
+    <input type="text" name="gioitinh" id="gioitinh" onkeydown="document.getElementById('c').innerHTML = document.getElementById('gioitinh').value">
+    <span>Giới tính: <span id="c"></span></span>
+</body>
+</html>
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onkeydown with Function</title>
+</head>
+<body>
+    <label for="name">Họ và tên:</label>
+    <input type="text" id="name" onkeydown="updateContent('name', 'a')">
+    <span id="a">Họ và tên</span> 
+
+    <script>
+        // Định nghĩa hàm cập nhật nội dung
+        function updateContent(inputId, outputId) {
+            const inputValue = document.getElementById(inputId).value; // Lấy giá trị ô nhập
+            document.getElementById(outputId).innerHTML = inputValue; // Gán giá trị vào nội dung
+        }
+    </script>
+</body>
+</html> -->
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onkeydown without Parameters</title>
+</head>
+<body>
+    <label for="name">Họ và tên:</label>
+    <input type="text" id="name" onkeydown="updateName()">
+    <span id="a">Họ và tên</span><br>
+
+    <label for="birthday">Ngày sinh:</label>
+    <input type="text" id="birthday" onkeydown="updateBirthday()">
+    <span id="b">Ngày sinh</span><br>
+
+    <label for="gender">Giới tính:</label>
+    <input type="text" id="gender" onkeydown="updateGender()">
+    <span id="c">Giới tính</span>
+
+    <script>
+        // Hàm cập nhật nội dung cho từng trường cụ thể
+        function updateName() {
+            document.getElementById('a').innerHTML = document.getElementById('name').value;
+        }
+
+        function updateBirthday() {
+            document.getElementById('b').innerHTML = document.getElementById('birthday').value;
+        }
+
+        function updateGender() {
+            document.getElementById('c').innerHTML = document.getElementById('gender').value;
+        }
+    </script>
+</body>
+</html>
+

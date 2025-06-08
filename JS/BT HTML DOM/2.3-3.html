@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img {
+            width: 400px;
+        }
+        .cum {
+            display: flex;
+        }
+        .div1, .div2, .div3 {
+            padding: 10px;
+            margin: 10px;
+            background-color: crimson;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <img src="" id="anh1">
+    <div class="cum">
+        <div class="div1" onclick="document.getElementById('anh1').src='../image/hanoi.webp'">Hà Nội</div>
+        <div class="div2" onclick="document.getElementById('anh1').src='../image/hue.jpg'">Huế</div>
+        <div class="div3" onclick="document.getElementById('anh1').src='../image/danang.webp'">Đà Nẵng</div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị hình ảnh nền</title>
+    <style>
+        #image-container {
+            width: 300px;
+            height: 200px;
+            margin-top: 20px;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="hn" onclick="document.getElementById('image-container').style.backgroundImage='url(../image/hanoi.webp)';">Hà Nội</div>
+    <div id="hue" onclick="document.getElementById('image-container').style.backgroundImage='url(../image/hue.jpg)';">Huế</div>
+    <div id="dn" onclick="document.getElementById('image-container').style.backgroundImage='url(../image/danang.webp)';">Đà Nẵng</div>
+
+    <!-- Div để hiển thị hình ảnh nền -->
+    <div id="image-container">
+        <!-- Hình ảnh sẽ được hiển thị dưới dạng nền của div này -->
+    </div>
+</body>
+</html>

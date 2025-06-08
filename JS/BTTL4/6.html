@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nhấn nút để thay đổi màu nền trang</h1>
+    <button type="button" onclick="bam()">Thay đổi màu nền</button>
+    <script>
+        function bam() {
+            colors = ['#FF5733', '#33FF57','#3357FF','#FF33A1','#FFFF33', '#33FFFF']
+            var random = Math.floor(Math.random() * colors.length);
+            document.body.style.backgroundColor = colors[random];
+        }
+    </script>
+</body>
+</html>

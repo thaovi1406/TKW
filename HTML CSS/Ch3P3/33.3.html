@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .div 
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto auto auto 50px;
+            gap: 40px;
+        }
+        .div1
+        {
+            background-color: rgba(128, 128, 128, 0.112);
+            text-align: center;
+            grid-column: 1/4 ;
+            padding-bottom: 30px;
+        }
+        button
+        {
+            margin-top: 10px;
+            background-color: rgba(0, 89, 255, 0.674);
+            color: white;
+            border-radius: 5px;
+            border: none;
+        }
+        .div2
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* Bố trí 3 cột cho các box */            
+            text-align: center;
+            grid-column: 1/4;
+            gap: 30px;
+        }
+        .box1, .box2, .box3, .box4, .box5, .box6
+        {
+            background-color: rgba(128, 128, 128, 0.112);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .footer
+        {
+            background-color: black;
+            color: white;
+            text-align: center;
+            align-content: center;
+            height: 70px;
+            grid-column: 1/4;
+            margin-top: -80px;
+        }
+        i
+        {
+            width: 30px;
+            height: 30px;
+            background-color: rgba(0, 89, 255, 0.674);
+            color: white;
+            align-content: center;
+            text-align: center;
+            border-radius: 7px;
+            margin-top: -35px;
+        }
+        @media (max-width: 768px) {
+            .div {
+                grid-template-columns: 1fr; /* Chuyển về 1 cột */
+                gap: 15px; /* Khoảng cách giữa các box */
+            }
+            .div2 {
+                grid-template-columns: 1fr; /* Chuyển thành 1 cột cho các box */
+            }
+            .footer {
+                grid-column: 1/4;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="div">
+        <div class="div1">
+            <h1>A warm welcome!</h1>
+            <span>Bootstrap utility classes are used to create this jumbotron since the old component has been removed from the framework. Why create custom CSS when you can use utilities?</span> <br>
+            <button>Call to action</button>
+        </div>
+        <div class="div2">
+            <div class="box1">
+                <i class="fa-regular fa-folder"></i>
+                <h4>Fresh new layout</h4>
+                <span>With Bootstrap 5, we're created a fresh new layout for this template!</span>
+            </div>
+            <div class="box2">
+                <i class="fa-solid fa-download"></i>
+                <h4>Free to download</h4>
+                <span>As always, Start Bootstrap has a powerful collection of free templates.</span>
+            </div>
+            <div class="box3">
+                <i class="fa-solid fa-layer-group"></i>
+                <h4>Jumbotron hero header</h4>
+                <span>The heroic part of this template is the jumbotron hero header!</span>
+            </div>
+            <div class="box4">
+                <i class="fa-solid fa-box"></i>
+                <h4>Feature boxes</h4>
+                <span>We're created some custom feature boxes using Bootstrap icons!</span>
+            </div>
+            <div class="box5">
+                <i class="fa-solid fa-code"></i>
+                <h4>Simple clean code</h4>
+                <span>We keep our dependencies up to date and squash bugs as they come!</span>
+            </div>
+            <div class="box6">
+                <i class="fa-regular fa-circle-check"></i>
+                <h4>A name you trust</h4>
+                <span>Start Bootstrap has been the leader in free Bootstrap templates since 2023!</span>
+            </div>
+        </div>
+    </div>
+     <div class="footer">
+        <span>Copyright Your Website 2023</span>
+    </div>
+</body>
+</html>

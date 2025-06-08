@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lưới Sản Phẩm</title>
+    <style>
+        .grid {
+            display: flex;
+            flex-wrap: wrap; /* Cho phép các mục xuống dòng */
+            gap: 10px; /* Khoảng cách giữa các mục */
+        }
+
+        .item {
+            background-color: aqua;
+            height: 100px;
+            flex: 1 1 calc(25% - 10px); /* Chiếm 25% chiều rộng trừ khoảng cách */
+            display: flex; /* Sử dụng flex để căn giữa nội dung */
+            justify-content: center; /* Căn giữa theo chiều ngang */
+            align-items: center; /* Căn giữa theo chiều dọc */
+        }
+
+        @media (max-width: 768px) {
+            .item {
+                flex: 1 1 calc(50% - 10px); /* Chiếm 50% chiều rộng trừ khoảng cách khi màn hình nhỏ hơn 768px */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="item">Sản phẩm 1</div>
+        <div class="item">Sản phẩm 2</div>
+        <div class="item">Sản phẩm 3</div>
+        <div class="item">Sản phẩm 4</div>
+        <div class="item">Sản phẩm 5</div>
+        <div class="item">Sản phẩm 6</div>
+        <div class="item">Sản phẩm 7</div>
+        <div class="item">Sản phẩm 8</div>
+    </div>
+</body>
+</html>

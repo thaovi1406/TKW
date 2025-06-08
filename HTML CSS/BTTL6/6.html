@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .grid
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-auto-rows: 200px;
+            grid-template-areas: 
+                    'muc1 muc2'
+                    'muc3 muc4';
+            grid-gap: 15px;
+        }
+        .muc
+        {
+            background-color: rgb(43, 163, 123);
+            text-align: center;
+            padding-top: 10px;
+            font-size: 16pt;
+        }
+        .muc1
+        {
+            grid-area: muc1;
+        }
+        .muc2
+        {
+            grid-area: muc2;
+        }
+        .muc3
+        {
+            grid-area: muc3;
+        }
+        .muc4
+        {
+            grid-area: muc4;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="muc muc1">Mục 1</div>
+        <div class="muc muc2">Mục 2</div>
+        <div class="muc muc3">Mục 3</div>
+        <div class="muc muc4">Mục 4</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+img {
+    width: 400px;
+    height: 300px;
+    border: 2px solid rgb(12, 163, 205);
+}
+b {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16pt;
+    color: rgb(5, 172, 227);
+}
+body {
+    text-align: center;
+}

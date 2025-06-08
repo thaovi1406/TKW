@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img
+        {
+            max-width: 400px;
+            min-height: 400px;
+        }
+        .container
+        {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content
+        {
+            margin-left: 20px;
+            flex: 1;
+        }
+        @media (min-width:768px)
+        {
+            .container
+            {
+                max-width: 100%;
+            }
+        }
+        @media (max-width:768px)
+        {
+            .container
+            { 
+                width: 100%;
+            }
+            .image {
+                display: none; /* Ẩn hình ảnh khi màn hình nhỏ hơn 768px */
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="image">
+        <img src="./image/3.4.jpg" alt="Web Design Illustration">
+    </div>
+    <div class="content">
+        <h1>KHÓA HỌC THIẾT KẾ WEB CHUYÊN NGHIỆP</h1>
+        <p>Khóa học thiết kế web mang lại cho bạn những lợi ích gì?</p> 
+        <p>Website hỗ trợ đắc lực cho doanh nghiệp trong việc quảng bá sản phẩm, dịch vụ hay thương hiệu. Mỗi đối tượng khác nhau sẽ có những yêu cầu riêng cho web của mình.</p>
+        <p>Nếu là kinh doanh sẽ cần cầu kỳ vì web chính là cửa hàng cung cấp sản phẩm, dịch vụ và để khẳng định thương hiệu. Đối với các cơ quan, tổ chức, web chủ yếu nhằm mục đích cung cấp thông tin.</p>
+        <p>Nhu cầu web ngày càng cao đồng nghĩa với cơ hội việc làm sau khi tham gia các lớp học web luôn rộng mở.</p>
+        <button>CHI TIẾT</button>
+    </div>
+</div>
+
+</body>
+</html>
